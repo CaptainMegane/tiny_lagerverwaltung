@@ -4,7 +4,7 @@ hallo?
 test der datenbankverbindung:
 
 <cfquery name="testquery" datasource="LagerDB">
-select * from test1
+select * from Kunden 
 </cfquery>
 
 <cfdump var="#testquery#"> 
