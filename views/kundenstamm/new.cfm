@@ -51,9 +51,12 @@
 
 <h1>Create a new Customer</h1>
 
+
 <cfif flashKeyExists("success")>
     <p class="success">#flash("success")#</p>
 </cfif>
+
+
 
 #startFormTag(action="create")#
 
