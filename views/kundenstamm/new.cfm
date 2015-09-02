@@ -51,7 +51,7 @@
 
 <h1>Create a new Customer</h1>
 
-#flashMessages("success")#
+
 
 #startFormTag(action="create")#
 
