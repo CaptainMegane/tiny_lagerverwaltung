@@ -6,6 +6,7 @@
 
 
 	<cfloop query="customers">
+		<p>
 		#K_Kundencode#
 		#K_Erfassungsdatum#
 		#K_Kundenname#
@@ -16,6 +17,7 @@
 		#K_Ort#
 		#K_Telefonnummer#
 		#K_Telefaxnummer#
+		</p>
 	</cfloop>
 
 
