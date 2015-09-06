@@ -1,10 +1,8 @@
-<cfif flashKeyExists("success")>
-	<cfoutput>
-	    <p class="success">#flash("success")#</p>
-	</cfoutput>
-</cfif>
-
 <cfoutput>
+	<cfif flashKeyExists("success")>
+	    <p class="success">#flash("success")#</p>
+	</cfif>
+	
 	<cfloop query="customers">
 		#K_Kundencode#
 		#K_Erfassungsdatum#
@@ -17,8 +15,6 @@
 		#K_Telefonnummer#
 		#K_Telefaxnummer#
 	</cfloop>
-</cfoutput>
-
-<cfoutput>
+	
 	#linkTo(text="Neuer Kunde", controller="Kundenstamm", action="new")#
 </cfoutput>

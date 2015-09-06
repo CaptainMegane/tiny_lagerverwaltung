@@ -8,11 +8,11 @@
 <cfcomponent extends="Controller">
 
 	<cffunction name="new">
-		<cfset customer = model("customer").new()>
+		<cfset customer=model("customer").new()>
 	</cffunction>
 
 	<cffunction name="create">
-	    <cfset customer = model("customer").create(params.customer)>
+	    <cfset customer=model("customer").create(params.customer)>
 	    <cfset redirectTo(
 	        action="new",
 	        success="User #customer.K_Kundenname# created successfully."
