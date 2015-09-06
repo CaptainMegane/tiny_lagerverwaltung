@@ -58,22 +58,31 @@
 
 
 
-#startFormTag(action="create_basket")#
+#startFormTag(action="create_file", name="file")#
 
 
- 	#select(
-        label="Kundenname: ", objectName="basket", property="Kundencode",
-        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode"
+ 	#select(includeBlank="-Kunde auswählen-",
+        label="Kundenname: ", objectName="customer", property="Kundencode",
+        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
+		onchange="location='akte_new?customer=' + this.options[this.selectedIndex].value;")#
+<cfif isDefined("params.customer")>
+
+ #select(
+        label="Karton: ", objectName="file", property="Karton",
+        options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
 
     )#
-	Hinweis: Kartonnummer wird vom System vergeben!
-	<!--- #textField(objectName="basket", property="Kartonnummer", label="Kartonnummer: ")# --->
 
-	#textField(objectName="basket", property="Lagerort", label="Lagerort: ")#
+
+	 #textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
+
+	<!---
+#textField(objectName="file", property="Lagerort", label="Lagerort: ")#
 
 	#textField(objectName="basket", property="Erstellt", label="Erstellt: ")#
+ --->
 
-
+</cfif>
     <div>#submitTag()#</div>
 
 #endFormTag()#
