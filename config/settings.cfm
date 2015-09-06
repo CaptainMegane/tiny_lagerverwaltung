@@ -5,7 +5,7 @@
 
 	set(dataSourceName="lagerdb");
 	// set(dataSourceUserName="");
-	// set(dataSourcePassword=""); 
+	// set(dataSourcePassword="");
 
 	/*
 		If you leave this setting commented out, CFWheels will try to determine the URL rewrite capabilities automatically.
@@ -15,4 +15,16 @@
 	*/
 
 	// set(URLRewriting="partial");
+
+
+    set(
+        functionName="textField", prependToLabel="<div><span class='label'>", appendToLabel="</span><span>",append="</span></div>",
+        labelPlacement="before"
+    );
+
+    set(
+        functionName="select", prependToLabel="<div><span class='label'>",appendToLabel="</span><span>", append="</span></div>",
+        labelPlacement="before"
+    )
+
 </cfscript>
