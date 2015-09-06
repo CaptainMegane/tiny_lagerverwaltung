@@ -49,7 +49,7 @@
 
 <cfoutput>
 
-<h1>Create a new Customer</h1>
+<h1>Neuen Kunden anlegen</h1>
 
 
 <cfif flashKeyExists("success")>
@@ -62,9 +62,22 @@
 
 
 
-    <div>#textField(objectName="customer", property="K_Kundenname", label="Kundenname: ")#</div>
+    #textField(objectName="customer", property="K_Kundenname", label="Kundenname: ")#
 
-    <div>#textField(objectName="customer", property="K_Straﬂe", label="Straﬂe: ")#</div>
+	#textField(objectName="customer", property="K_Kundenvertreter", label="Kontaktperson: ")#
+
+    #textField(objectName="customer", property="K_Straﬂe", label="Straﬂe, Hausnummer: ")#
+
+	#textField(objectName="customer", property="K_PLZ", label="PLZ: ")#
+
+    #textField(objectName="customer", property="K_Ort", label="Ort: ")#
+
+	#textField(objectName="customer", property="K_Telefonnummer", label="Telefon: ")#
+
+	#textField(objectName="customer", property="K_Telefaxnummer", label="Fax: ")#
+
+	#textField(objectName="customer", property="K_EMail", label="E-Mail: ")#
+
 
     <div>#submitTag()#</div>
 
