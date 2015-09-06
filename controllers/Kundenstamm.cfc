@@ -21,4 +21,10 @@
 
 	</cffunction>
 
+	<cffunction name="showAll">
+
+		<cfset customers=model("customer").findAll()>
+
+	</cffunction>
+
 </cfcomponent>
