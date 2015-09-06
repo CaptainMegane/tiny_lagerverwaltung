@@ -7,11 +7,13 @@
 <link rel="stylesheet" media="all" href="../styles/960_12_col.css" />
 </head>
 <body>
+	<div id="container">
 	<div id="navigation">
 		<cfoutput>#includeNavigation()#</cfoutput>
 	</div>
 	<div id="content">
 		<cfoutput>#includeContent()#</cfoutput>
+	</div>
 	</div>
 </body>
 </html>
