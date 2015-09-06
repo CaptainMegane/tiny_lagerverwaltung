@@ -2,6 +2,13 @@
 
 <html>
 	<body>
-		<cfoutput>#includeContent()#</cfoutput>
+		<div id="navigation" style="float:left">
+			HIER kommt das Menü!
+		</div>
+
+		<div id="content">
+
+			<cfoutput>#includeContent()#</cfoutput>
+		</div>
 	</body>
 </html>
