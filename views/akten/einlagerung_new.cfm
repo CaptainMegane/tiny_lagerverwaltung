@@ -66,8 +66,8 @@
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode"
 
     )#
-
-	#textField(objectName="basket", property="Kartonnummer", label="Kartonnummer: ")#
+	Hinweis: Kartonnummer wird vom System vergeben!
+	<!--- #textField(objectName="basket", property="Kartonnummer", label="Kartonnummer: ")# --->
 
 	#textField(objectName="basket", property="Lagerort", label="Lagerort: ")#
 

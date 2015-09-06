@@ -19,7 +19,7 @@
 	    <cfset basket = model("basket").create(params.basket)>
 	    <cfset redirectTo(
 	        action="einlagerung_new",
-	        success="Akte #basket.Kartonnummer# auf Lagerplatz #basket.Lagerort# erfolgreich angelegt."
+	        success="Karton #basket.Kartonnummer# auf Lagerplatz #basket.Lagerort# erfolgreich angelegt."
 	    )>
 
 	</cffunction>
