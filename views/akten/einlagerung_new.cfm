@@ -72,21 +72,6 @@
 	#textField(objectName="basket", property="Lagerort", label="Lagerort: ")#
 
 	#textField(objectName="basket", property="Erstellt", label="Erstellt: ")#
-	<!---
-#textField(objectName="customer", property="K_Kundenvertreter", label="Kontaktperson: ")#
-
-    #textField(objectName="customer", property="K_Straße", label="Straße, Hausnummer: ")#
-
-	#textField(objectName="customer", property="K_PLZ", label="PLZ: ")#
-
-    #textField(objectName="customer", property="K_Ort", label="Ort: ")#
-
-	#textField(objectName="customer", property="K_Telefonnummer", label="Telefon: ")#
-
-	#textField(objectName="customer", property="K_Telefaxnummer", label="Fax: ")#
-
-	#textField(objectName="customer", property="K_EMail", label="E-Mail: ")#
- --->
 
 
     <div>#submitTag()#</div>
