@@ -8,10 +8,23 @@
 <cfcomponent extends="Controller">
 
 	<cffunction name="einlagerung_new">
+
+		<cfscript>
+			if (StructKeyExists(params,"key"))
+			{
+				customers=model("customer").findOneByK_Kundencode(key=params.key,returnAs='query');
+			}
+			else
+			{
+				customers=model("customer").findAll();
+			}
+
+		</cfscript>
 		<cfset basket = model("basket").new()>
 		<cfset basket.Erstellt="#DateFormat(now())# #TimeFormat(now())#">
 
-		<cfset customers=model("customer").findAll()>
+
+
 	</cffunction>
 
 	<cffunction name="akte_new">

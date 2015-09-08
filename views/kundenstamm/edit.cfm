@@ -49,7 +49,7 @@
 
 <cfoutput>
 
-<h1>Neuen Kunden anlegen</h1>
+<h1>Kunde #customer.K_Kundenname# bearbeiten</h1>
 
 
 <cfif flashKeyExists("success")>
@@ -58,9 +58,10 @@
 
 
 
-#startFormTag(action="create")#
+#startFormTag(action="update")#
 
 
+	#hiddenField(objectName="customer", property="K_Kundencode")#
 
     #textField(objectName="customer", property="K_Kundenname", label="Kundenname: ")#
 

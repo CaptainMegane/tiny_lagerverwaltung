@@ -61,11 +61,21 @@
 #startFormTag(action="create_basket")#
 
 
- 	#select(
-        label="Kundenname: ", objectName="basket", property="Kundencode",
-        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode"
 
-    )#
+		<cfif StructKeyExists(params,"key")>
+
+    		#select(label="Kundenname: ", objectName="basket", property="Kundencode",
+	       	 options=customers, 	textField="K_Kundenname", valueField="K_Kundencode")#
+
+		<cfelse>
+
+	 		#select(
+    	    label="Kundenname: ", objectName="basket", property="Kundencode",
+	       	 options=customers, 	textField="K_Kundenname", valueField="K_Kundencode")#
+
+    	</cfif>
+
+
 	Hinweis: Kartonnummer wird vom System vergeben!
 	<!--- #textField(objectName="basket", property="Kartonnummer", label="Kartonnummer: ")# --->
 
