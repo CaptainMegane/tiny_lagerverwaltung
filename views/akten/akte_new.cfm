@@ -49,7 +49,7 @@
 
 <cfoutput>
 
-<h1>Neuen Karton anlegen</h1>
+<h1>Neue Akte einlagern</h1>
 
 
 <cfif flashKeyExists("success")>
@@ -60,30 +60,39 @@
 
 #startFormTag(action="create_file", name="file")#
 
+<!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
+<cfif StructKeyExists(params,"key")>
 
- 	#select(includeBlank="-Kunde auswählen-",
+ 	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
 		onchange="location='index.cfm/akten/einlagerung_new/customer=' + this.options[this.selectedIndex].value;")#
 
-<cfif isDefined("params.customer")>
-
- #select(
+	 #select(
         label="Karton: ", objectName="file", property="Karton",
         options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
 
     )#
+<cfelse>
 
+ 	#select(includeBlank="-Kunde auswählen-",
+        label="Kundenname: ", objectName="customer", property="Kundencode",
+        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
+		onchange="location='akte_new/customer=' + this.options[this.selectedIndex].value;")#
 
-	 #textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
+	<cfif isDefined("params.customer")>
 
-	<!---
-#textField(objectName="file", property="Lagerort", label="Lagerort: ")#
+ 		#select(
+        label="Karton: ", objectName="file", property="Karton",
+        options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
 
-	#textField(objectName="basket", property="Erstellt", label="Erstellt: ")#
- --->
+  	  )#
 
+	</cfif>
+huhu3
 </cfif>
+	#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
+
     <div>#submitTag()#</div>
 
 #endFormTag()#

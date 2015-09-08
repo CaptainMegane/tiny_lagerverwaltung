@@ -24,5 +24,5 @@ $(document).ready( function () {
 </cfif>
 
 	#lagerlistTable(files)#
-
+	#linkTo(text="Akte einlagern", controller="Akten", action="akte_new", key=files.Karton)#
 </cfoutput>
