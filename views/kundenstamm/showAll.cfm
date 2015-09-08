@@ -36,6 +36,8 @@ $(document).ready( function () {
 		<th>Fax</th>
 		<th>E-Mail</th>
 		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -54,6 +56,7 @@ $(document).ready( function () {
 		<td>#K_EMail#</td>
 		<td>#linkTo(text="Kunde bearbeiten", controller="Kundenstamm", action="edit", key=K_Kundencode)#</td>
 		<td>#linkTo(text="Karton erstellen", controller="Akten", action="einlagerung_new", key=K_Kundencode)#</td>
+		<td>#linkTo(text="Kartons anzeigen", controller="Akten", action="showBaskets", key=K_Kundencode)#</td>
 
 		</tr>
 	</cfloop>

@@ -64,4 +64,14 @@
 
 	</cffunction>
 
+	<cffunction name=showBaskets>
+
+		<cfset baskets = model("basket").findAllByKundencode(key=params.key,select="KARTONNUMMER,customers.K_Kundenname,LAGERORT",include="customers")>
+	</cffunction>
+
+	<cffunction name=showFiles>
+		<cfset files = model("file").findAllByKarton(key=params.key,select="AKTENNUMMER,EINDATUM,KARTON,VERNICHT_DAT,VERNICHTET,VERNICHTETAM,TEXT")>
+	</cffunction>
+
+
 </cfcomponent>

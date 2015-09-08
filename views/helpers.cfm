@@ -12,4 +12,48 @@
 
 	</cfoutput>
 
+
+
+</cffunction>
+
+<cffunction name="lagerlistTable">
+	<cfargument   name="result" required="yes">
+	<cfargument   name="linkKey" required="no">
+	<cfargument   name="linkController" required="no">
+	<cfargument   name="linkAction" required="no">
+	<cfargument   name="linkText" required="no">
+
+
+	<cfoutput>
+	<table border="1">
+		<thead>
+			<tr>
+				<cfloop list="#result.columnList#" index="col">
+					<th>#col#</th>
+				</cfloop>
+				<cfif isDefined("linkField")>
+					<th></th>
+				</cfif>
+			</tr>
+		</thead>
+		<tbody>
+
+			<cfloop query="result">
+			<tr>
+				<cfloop list="#result.columnList#" index="col">
+
+				<td>#result[col][currentrow]#</td>
+				</cfloop>
+				<cfif isDefined("linkKey")>
+					<th>#linkTo(text=linkText, controller=linkController, action=linkAction, key=result[linkKey][currentrow])#</th>
+				</cfif>
+
+
+			</tr>
+			</cfloop>
+		</tbody>
+		<tfoot>
+		</tfoot>
+	</table>
+	</cfoutput>
 </cffunction>
