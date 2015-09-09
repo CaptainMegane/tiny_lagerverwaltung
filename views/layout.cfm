@@ -4,16 +4,20 @@
 <head>
 <meta charset="utf-8" />
 <title>Lagerdatenbank</title>
+<link rel="stylesheet" media="all" href="../styles/reset.css" />
+<link rel="stylesheet" media="all" href="../styles/text.css" />
 <link rel="stylesheet" media="all" href="../styles/960_12_col.css" />
 </head>
 <body>
-	<div id="container">
-	<div id="navigation">
-		<cfoutput>#includeNavigation()#</cfoutput>
-	</div>
-	<div id="content">
-		<cfoutput>#includeContent()#</cfoutput>
-	</div>
+	<div class="container_12">
+		<div class="main">
+			<div id="navigation" class="grid_6">
+				<cfoutput>#includeNavigation()#</cfoutput>
+			</div>
+			<div id="content" class="grid_6">
+				<cfoutput>#includeContent()#</cfoutput>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
