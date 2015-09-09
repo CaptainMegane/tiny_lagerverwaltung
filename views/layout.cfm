@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Lagerdatenbank</title>
-<link rel="stylesheet" media="all" href="../styles/960_12_col.css" />
+<cfoutput>#styleSheetLinkTag("960_12_col.css")#</cfoutput>
 </head>
 <body>
 	<div id="container">
