@@ -8,8 +8,8 @@
 
 
 #styleSheetLinkTag("reset.css")#
-#styleSheetLinkTag("text.css"")#
-#styleSheetLinkTag("960_12_col.css"")#
+#styleSheetLinkTag("text.css")#
+#styleSheetLinkTag("960_12_col.css")#
 
 </head>
 <body>
