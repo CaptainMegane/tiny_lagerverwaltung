@@ -3,11 +3,11 @@
 <cffunction name="includeNavigation">
 
 	<cfoutput>
-	<p>#linkTo(text="Kundenverwaltung", controller="Kundenstamm", action="showAll")#</p>
+	<p><li>#linkTo(text="Kundenverwaltung", controller="Kundenstamm", action="showAll")#</li></p>
 
-	<p>#linkTo(text="Neuen Karton erstellen (Kunde x)", controller="Akten", action="einlagerung_new")#</p>
+	<p><li>#linkTo(text="Neuen Karton erstellen (Kunde x)", controller="Akten", action="einlagerung_new")#</li></p>
 
-	<p>#linkTo(text="Neue Akte einlagern (Kunde x,Karton y)", controller="Akten", action="akte_new")#</p>
+	<p><li>#linkTo(text="Neue Akte einlagern (Kunde x,Karton y)", controller="Akten", action="akte_new")#</li></p>
 
 
 	</cfoutput>
