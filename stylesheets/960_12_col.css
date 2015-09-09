@@ -46,16 +46,17 @@ body {
 .grid_12 {
   display: inline;
   float: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background:#F5F5F5
 }
 
 .grid_6
 {
   display: inline;
   float: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
   background:#FFFFFF
 }
 
@@ -108,7 +109,7 @@ body {
 }
 
 .container_12 .grid_6 {
-  width: 460px;
+  width:1240px;
 }
 
 .container_12 .grid_7 {
