@@ -49,7 +49,7 @@
 
 <cfoutput>
 
-<h1>Neue Akte einlagern</h1>
+<h1>Kunde #customer.K_Kundenname# bearbeiten</h1>
 
 
 <cfif flashKeyExists("success")>
@@ -58,40 +58,29 @@
 
 
 
-#startFormTag(action="create_file", name="file")#
+#startFormTag(action="update")#
 
-<!---todo: nur wenn kunde manuell ausgew‰hlt customer suchen und baskets suchen>--->
-<cfif StructKeyExists(params,"key")>
 
- 	#select(
-        label="Kundenname: ", objectName="customer", property="Kundencode",
-        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='index.cfm/akten/einlagerung_new/customer=' + this.options[this.selectedIndex].value;")#
+	#hiddenField(objectName="customer", property="K_Kundencode")#
 
-	 #select(
-        label="Karton: ", objectName="file", property="Karton",
-        options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
+    #textField(objectName="customer", property="K_Kundenname", label="Kundenname: ")#
 
-    )#
-<cfelse>
+	#select(objectName="customer",property="Branche", label="Branche: " ,options=branches)#
 
- 	#select(includeBlank="-Kunde ausw‰hlen-",
-        label="Kundenname: ", objectName="customer", property="Kundencode",
-        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='akte_new/customer=' + this.options[this.selectedIndex].value;")#
+	#textField(objectName="customer", property="K_Kundenvertreter", label="Kontaktperson: ")#
 
-	<cfif isDefined("params.customer")>
+    #textField(objectName="customer", property="K_Straﬂe", label="Straﬂe, Hausnummer: ")#
 
- 		#select(
-        label="Karton: ", objectName="file", property="Karton",
-        options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
+	#textField(objectName="customer", property="K_PLZ", label="PLZ: ")#
 
-  	  )#
+    #textField(objectName="customer", property="K_Ort", label="Ort: ")#
 
-	</cfif>
-huhu3
-</cfif>
-	#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
+	#textField(objectName="customer", property="K_Telefonnummer", label="Telefon: ")#
+
+	#textField(objectName="customer", property="K_Telefaxnummer", label="Fax: ")#
+
+	#textField(objectName="customer", property="K_EMail", label="E-Mail: ")#
+
 
     <div>#submitTag()#</div>
 

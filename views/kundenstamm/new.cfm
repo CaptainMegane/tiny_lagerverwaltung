@@ -64,6 +64,8 @@
 
     #textField(objectName="customer", property="K_Kundenname", label="Kundenname: ")#
 
+	#select(objectName="customer",property="Branche", label="Branche: " ,options=branches)#
+
 	#textField(objectName="customer", property="K_Kundenvertreter", label="Kontaktperson: ")#
 
     #textField(objectName="customer", property="K_Straﬂe", label="Straﬂe, Hausnummer: ")#
