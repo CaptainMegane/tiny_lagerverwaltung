@@ -21,9 +21,13 @@ body {
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 {
-  /* das stört! margin-left: auto;*/
+  /* das stört!*/ margin-left: auto;
   margin-right: auto;
-  width: 960px;
+  width: 1400px;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* `Grid >> Global

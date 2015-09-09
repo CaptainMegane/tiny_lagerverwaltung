@@ -11,19 +11,16 @@
 #styleSheetLinkTag("960_12_col.css")#
 </cfoutput>
 </head>
-<body style="backgroud: #F3E0C0">
-	<div>
-		<div class="grid_6" >
-			&nbsp;
-		</div>
+<body bgcolor="#F3E0C0">
+
+	<div class="container_12" style="background:#C6B69D">
+	<div style="background:#B72C3C">
+
 		<h1>Header</h1>
 	</div>
-	<div class="container_12">
-		<div class="grid_2" >
-			&nbsp;
-		</div>
+
 			<div class="main">
-				<div id="navigation" class="grid_2" style="background:#B72C3C">
+				<div id="navigation" class="grid_2" >
 <cfoutput>
 					#includeNavigation()#
 </cfoutput>

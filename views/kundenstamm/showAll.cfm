@@ -21,13 +21,13 @@ $(document).ready( function () {
 <cfif flashKeyExists("success")>
 	    <p class="success">#flash("success")#</p>
 </cfif>
-<table border="1"" id="customer">
+<table border="1" id="customer" >
 	<thead>
 	<tr>
-		<th>Kundennummer</th>
-		<th>Erfassungsdatum</th>
+		<th>No.</th>
+		<!--- <th>Erfassungsdatum</th> --->
 		<th>Name</th>
-		<th>Kontaktperson</th>
+		<th>Kontakt</th>
 		<th>Branche</th>
 		<th>Straﬂe</th>
 		<th>PLZ</th>
@@ -44,7 +44,7 @@ $(document).ready( function () {
 	<cfloop query="customers">
 		<tr>
 		<td>#K_Kundencode#</td>
-		<td>#K_Erfassungsdatum#</td>
+		<!--- <td>#K_Erfassungsdatum#</td> --->
 		<td>#K_Kundenname#</td>
 		<td>#K_Kundenvertreter#</td>
 		<td>#BR#</td>
@@ -54,9 +54,9 @@ $(document).ready( function () {
 		<td>#K_Telefonnummer#</td>
 		<td>#K_Telefaxnummer#</td>
 		<td>#K_EMail#</td>
-		<td>#linkTo(text="Kunde bearbeiten", controller="Kundenstamm", action="edit", key=K_Kundencode)#</td>
-		<td>#linkTo(text="Karton erstellen", controller="Akten", action="einlagerung_new", key=K_Kundencode)#</td>
-		<td>#linkTo(text="Kartons anzeigen", controller="Akten", action="showBaskets", key=K_Kundencode)#</td>
+		<td>#linkTo(text="bearbeiten", controller="Kundenstamm", action="edit", key=K_Kundencode)#</td>
+		<td>#linkTo(text="Karton<br>erstellen", controller="Akten", action="einlagerung_new", key=K_Kundencode)#</td>
+		<td>#linkTo(text="Kartons<br> anzeigen", controller="Akten", action="showBaskets", key=K_Kundencode)#</td>
 
 		</tr>
 	</cfloop>
