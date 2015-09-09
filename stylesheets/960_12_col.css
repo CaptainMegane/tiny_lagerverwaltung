@@ -38,7 +38,6 @@ body {
 .grid_3,
 .grid_4,
 .grid_5,
-.grid_6,
 .grid_7,
 .grid_8,
 .grid_9,
@@ -49,6 +48,15 @@ body {
   float: left;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.grid_6
+{
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  background:#FFFFFF
 }
 
 .push_1, .pull_1,
