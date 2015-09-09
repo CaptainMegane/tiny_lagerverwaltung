@@ -10,6 +10,7 @@
 #styleSheetLinkTag("text.css")#
 #styleSheetLinkTag("960_12_col.css")#
 </cfoutput>
+
 </head>
 <body bgcolor="#F3E0C0">
 
@@ -22,7 +23,7 @@
 	</div>
 	<div style="background:#B72C3C">
 
-		<h1>Menü</h1>
+		<li>Menü</li>
 	</div>
 
 			<div class="main" >
