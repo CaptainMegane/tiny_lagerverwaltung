@@ -1,3 +1,6 @@
+<!--- <cfinclude template="navigation.cfm"> --->
+
+
 
 <h1>Kunden anzeigen</h1>
 

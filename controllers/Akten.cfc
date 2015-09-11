@@ -8,7 +8,7 @@
 <cfcomponent extends="Controller">
 
 	<cffunction name="einlagerung_new">
-
+		<cfinclude template="../views/akten/navigation.cfm">
 		<cfscript>
 			if (StructKeyExists(params,"key"))
 			{
@@ -28,7 +28,7 @@
 	</cffunction>
 
 	<cffunction name="akte_new">
-
+        <cfinclude template="../views/akten/navigation.cfm">
 		<cfset customer=model("customer").new()>
 		<cfset customers=model("customer").findAll()>
 		<cfset file = model("basket").new()>
@@ -53,7 +53,7 @@
 	</cffunction>
 
 	<cffunction name="create_basket">
-
+        <cfinclude template="../views/akten/navigation.cfm">
 	    <cfset basket = model("basket").create(params.basket)>
 	    <cfset redirectTo(
 	        action="einlagerung_new",
@@ -63,7 +63,7 @@
 	</cffunction>
 
 	<cffunction name="create_file">
-
+        <cfinclude template="../views/akten/navigation.cfm">
 	    <cfset file = model("file").create(params.file)>
 	    <cfset redirectTo(
 	        action="akte_new",
@@ -73,12 +73,23 @@
 	</cffunction>
 
 	<cffunction name=showBaskets>
+        <cfinclude template="../views/akten/navigation.cfm">
 
-		<cfset baskets = model("basket").findAllByKundencode(key=params.key,select="KARTONNUMMER,customers.K_Kundenname,LAGERORT",include="customers")>
+
+		<cfif StructKeyExists(params,"key")>
+			<cfset baskets = model("basket").findAllByKundencode(key=params.key,select="KARTONNUMMER,customers.K_Kundenname,LAGERORT",include="customers")>
+		<cfelse>
+			<cfset baskets = model("basket").findAll(select="KARTONNUMMER,customers.K_Kundenname,LAGERORT",include="customers")>
+		</cfif>
 	</cffunction>
 
 	<cffunction name=showFiles>
-		<cfset files = model("file").findAllByKarton(key=params.key,select="AKTENNUMMER,EINDATUM,KARTON,VERNICHT_DAT,VERNICHTET,VERNICHTETAM,TEXT")>
+		<cfinclude template="../views/akten/navigation.cfm">
+		<cfif StructKeyExists(params,"key")>
+			<cfset files = model("file").findAllByKarton(key=params.key,select="AKTENNUMMER,EINDATUM,KARTON,VERNICHT_DAT,VERNICHTET,VERNICHTETAM,TEXT")>
+		<cfelse>
+			<cfset files = model("file").findAll(select="AKTENNUMMER,EINDATUM,KARTON,VERNICHT_DAT,VERNICHTET,VERNICHTETAM,TEXT")>
+		</cfif>
 	</cffunction>
 
 

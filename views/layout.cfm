@@ -5,6 +5,7 @@
 <meta charset="utf-8" />
 <title>Lagerdatenbank</title>
 
+
 <cfoutput>
 #styleSheetLinkTag("reset.css")#
 #styleSheetLinkTag("text.css")#
@@ -23,13 +24,14 @@
 	</div>
 	<div style="background:#B72C3C">
 
-		<li>Menü</li>
+		<cfoutput>#includeNavigation()#</cfoutput>
 	</div>
 
 			<div class="main" >
 				<div id="navigation" class="grid_2" >
 <cfoutput>
-					#includeNavigation()#
+
+					#includeContent("leftNav")#
 </cfoutput>
 				</div>
 				<div id="content" class="grid_6">
