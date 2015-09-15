@@ -39,7 +39,7 @@
 			<cfset customers=model("customer").findAllByK_Kundencode(baskets.Kundencode)>
 
 		<!---customer wurde zuerst ausgewählt --->
-		<cfelse if StructKeyExists(params,"customer")>
+		<cfelseif StructKeyExists(params,"customer")>
 			<!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
 			<cfset customers= model("customer").findOneByK_Kundencode(params.customer)>
 			<cfset baskets=model("basket").findAllByKundencode(params.customer)>
