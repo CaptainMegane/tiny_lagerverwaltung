@@ -42,7 +42,7 @@
 		<cfelseif StructKeyExists(params,"customer")>
 			<!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
 			<cfset customers= model("customer").findOneByK_Kundencode(params.customer)>
-			<cfset baskets=model("basket").findAllByKundencode(params.customer)>
+			<cfset baskets=model("basket").findAllByKundencode(customers.K_Kundencode)>
 
 			<cfset file.Eindatum="#DateFormat(now())# #TimeFormat(now())#">
 		
