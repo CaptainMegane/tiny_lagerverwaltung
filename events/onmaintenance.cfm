@@ -10,9 +10,9 @@
  
  
 
- <link rel="stylesheet" type="text/css" href="../stylesheets/reset.css">
- <link rel="stylesheet" type="text/css" href="../stylesheets/text.css">
- <link rel="stylesheet" type="text/css" href="../stylesheets/960_12_col.css">
+ <link rel="stylesheet" type="text/css" href="/lagerverwaltung/stylesheets/reset.css">
+ <link rel="stylesheet" type="text/css" href="/lagerverwaltung/stylesheets/text.css">
+ <link rel="stylesheet" type="text/css" href="/lagerverwaltung/stylesheets/960_12_col.css">
 
  
  </head> 
