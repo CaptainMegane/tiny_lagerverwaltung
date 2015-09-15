@@ -8,18 +8,18 @@
 	</tr>
 	<tr>
 		<td>Kontaktperson:</td>
-		<td><cfinput name="itBevollm‰chtigt" type="text" size="50" required="true"></td>
+		<td><cfinput name="itBevollm√§chtigt" type="text" size="50" required="true"></td>
 		<td>Branche:</td>
 		<td>
 			<cfselect name="sbBrance"  required="true">
 				<option value="1">Versicherung</option>
-				<option value="2">Behˆrde</option>
+				<option value="2">Beh√∂rde</option>
 			</cfselect>
 		</td>
 	</tr>
 	<tr>
-		<td>Straﬂe, Hausnummer:</td>
-		<td colspan="3"><cfinput name="itStraﬂe" type="text" size="50" required="true"></td>
+		<td>Stra√üe, Hausnummer:</td>
+		<td colspan="3"><cfinput name="itStra√üe" type="text" size="50" required="true"></td>
 	</tr>
 	<tr>
 		<td>PLZ:</td>
@@ -56,17 +56,17 @@
     <p class="success">#flash("success")#</p>
 </cfif>
 
-
+<cfdump var="#params#">
 
 #startFormTag(action="create_file", name="file")#
 
-<!---todo: nur wenn kunde manuell ausgew‰hlt customer suchen und baskets suchen>--->
+<!---todo: nur wenn kunde manuell ausgew√§hlt customer suchen und baskets suchen>--->
 <cfif StructKeyExists(params,"key")>
 
  	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='index.cfm/akten/einlagerung_new/customer=' + this.options[this.selectedIndex].value;")#
+		onchange="location='index.cfm/akten/akte_new/customer=' + this.options[this.selectedIndex].value;")#
 
 	 #select(
         label="Karton: ", objectName="file", property="Karton",
@@ -75,10 +75,10 @@
     )#
 <cfelse>
 
- 	#select(includeBlank="-Kunde ausw‰hlen-",
+ 	#select(includeBlank="-Kunde ausw√§hlen-",
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='akte_new/customer=' + this.options[this.selectedIndex].value;")#
+		onchange="location='index.cfm/akten/akte_new/customer=' + this.options[this.selectedIndex].value;")#
 
 	<cfif isDefined("params.customer")>
 

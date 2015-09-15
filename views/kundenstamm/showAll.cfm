@@ -32,7 +32,7 @@ $(document).ready( function () {
 		<th>Name</th>
 		<th>Kontakt</th>
 		<th>Branche</th>
-		<th>Straﬂe</th>
+		<th>Stra&szlig;e</th>
 		<th>PLZ</th>
 		<th>Ort</th>
 		<th>Telefon</th>

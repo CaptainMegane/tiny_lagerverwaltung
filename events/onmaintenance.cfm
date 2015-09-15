@@ -9,12 +9,10 @@
  
  
  
- <cfoutput> 
- #styleSheetLinkTag("reset.css")# 
- #styleSheetLinkTag("text.css")# 
- #styleSheetLinkTag("960_12_col.css")# 
- </cfoutput> 
- 
+ <link rel="stylesheet" type="text/css" href="/lagerverwaltung/stylesheets/reset.css">
+ <link rel="stylesheet" type="text/css" href="/lagerverwaltung/stylesheets/text.css">
+ <link rel="stylesheet" type="text/css" href="/lagerverwaltung/stylesheets/960_12_col.css">
+
  
  </head> 
  <body bgcolor="#F3E0C0"> 
@@ -36,6 +34,7 @@
  
  			<div class="main" > 
  				<div id="navigation" class="grid_2" > 
+ 					<li>Maintenance!</li>
  				</div> 
  				<div id="content" class="grid_6"> 
  					<h1>Maintenance!</h1>

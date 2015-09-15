@@ -5,4 +5,5 @@
 	*/
 
 	set(environment="development");
+	set(reloadPassword="iAmGod2012");
 </cfscript>
