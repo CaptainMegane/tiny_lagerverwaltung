@@ -2,7 +2,7 @@
 
 
 <cfoutput>
-<h1>Kartons von Kunde #baskets.K_Kundenname#</h1>
+<h1>Alle Kartons</h1>
 <!-- jQuery -->
 <!-- DataTables CSS -->
 #styleSheetLinkTag("jquery.dataTables.css")#
