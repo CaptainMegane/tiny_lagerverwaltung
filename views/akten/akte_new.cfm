@@ -78,7 +78,7 @@
  	#select(includeBlank="-Kunde auswählen-",
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='akte_new/customer=' + this.options[this.selectedIndex].value;")#
+		onchange="location='index.cfm/akten/einlagerung_new/customer=' + this.options[this.selectedIndex].value;")#
 
 	<cfif isDefined("params.customer")>
 
