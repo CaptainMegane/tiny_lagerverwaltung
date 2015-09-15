@@ -56,7 +56,7 @@
     <p class="success">#flash("success")#</p>
 </cfif>
 
-
+<cfdump var="#params#">
 
 #startFormTag(action="create_file", name="file")#
 
