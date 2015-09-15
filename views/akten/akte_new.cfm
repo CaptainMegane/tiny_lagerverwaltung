@@ -61,7 +61,7 @@
 #startFormTag(action="create_file", name="file")#
 
 <!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
-<cfif StructKeyExists(params,"kunde")>
+<cfif StructKeyExists(params,"key")>
 
  	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
