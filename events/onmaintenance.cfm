@@ -35,6 +35,7 @@
  
  			<div class="main" > 
  				<div id="navigation" class="grid_2" > 
+ 					<li>Maintenance!</li>
  				</div> 
  				<div id="content" class="grid_6"> 
  					<h1>Maintenance!</h1>
