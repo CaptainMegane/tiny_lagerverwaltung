@@ -61,12 +61,12 @@
 #startFormTag(action="create_file", name="file")#
 
 <!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
-<cfif StructKeyExists(params,"key")>
+<cfif StructKeyExists(params,"kunde")>
 
  	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='index.cfm/akten/einlagerung_new/customer=' + this.options[this.selectedIndex].value;")#
+		onchange="location='index.cfm/akten/akte_new/customer=' + this.options[this.selectedIndex].value;")#
 
 	 #select(
         label="Karton: ", objectName="file", property="Karton",
