@@ -15,7 +15,7 @@
 <script type="text/javascript">
 
 $(document).ready( function () {
-    $('#customer').DataTable();
+    $('#table').DataTable();
 } );
 </script>
 <cfoutput>

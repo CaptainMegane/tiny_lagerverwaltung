@@ -17,14 +17,14 @@
 <script type="text/javascript">
 
 $(document).ready( function () {
-    $('#customer').DataTable();
+    $('#table').DataTable();
 } );
 </script>
 <cfoutput>
 <cfif flashKeyExists("success")>
 	    <p class="success">#flash("success")#</p>
 </cfif>
-<table border="1" id="customer" >
+<table border="1" id="table" >
 	<thead>
 	<tr>
 		<th>No.</th>

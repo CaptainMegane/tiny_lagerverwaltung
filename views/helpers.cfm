@@ -27,14 +27,14 @@
 
 
 	<cfoutput>
-	<table border="1">
+	<table border="1" id="table">
 		<thead>
 			<tr>
 				<cfloop list="#result.columnList#" index="col">
 					<th>#col#</th>
 				</cfloop>
-				<cfif isDefined("linkField")>
-					<th></th>
+				<cfif isDefined("linkKey")>
+					<th>&nbsp;</th>
 				</cfif>
 			</tr>
 		</thead>
