@@ -5,6 +5,7 @@
 
 <cfif flashKeyExists("success")>
     <p class="success">#flash("success")#</p>
+	<p>#linkTo(text="Akte einlagern", controller="Akten", action="akte_new", key="basket=" & basketid)#</p>
 </cfif>
 
 
