@@ -38,6 +38,7 @@ $(document).ready( function () {
 		<th></th>
 		<th></th>
 		<th></th>
+		<th></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -54,7 +55,8 @@ $(document).ready( function () {
 		<td>#K_Telefonnummer#</td>
 		<td>#K_Telefaxnummer#</td>
 		<td>#K_EMail#</td>
-		<td>#linkTo(text="bearbeiten", controller="Kundenstamm", action="edit", key=K_Kundencode)#</td>
+		<td>#linkTo(text="edit", controller="Kundenstamm", action="edit", key=K_Kundencode)#</td>
+		<td>#linkTo(text="del", controller="Kundenstamm", action="edit", key=K_Kundencode)#</td>
 		<td>#linkTo(text="Karton<br>erstellen", controller="Akten", action="einlagerung_new", key=K_Kundencode)#</td>
 		<td>#linkTo(text="Kartons<br> anzeigen", controller="Akten", action="showBaskets", key=K_Kundencode)#</td>
 

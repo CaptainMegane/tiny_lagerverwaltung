@@ -37,17 +37,17 @@
 		<cfif StructKeyExists(params,"key")>
 
 			<cfscript>
-				var prefix=ListFirst(params.key,"=");
-				var value=ListLast(params.key,"=");
+				var prefix=ListFirst(params.key,":");
+				var value=ListLast(params.key,":");
 			switch (prefix) {
-				/* Baset wurde zuerst ausgew√§hlt */
+				/* Baset wurde zuerst ausgew‰hlt */
 				case "basket":
 					baskets=model("basket").findOneByKartonnummer(key=value,returnAs='query');
 					customers=model("customer").findAllByK_Kundencode(baskets.Kundencode);
 					break;
 				case "customer":
-					/* customer wurde zuerst ausgew√§hlt
-					todo: nur wenn kunde manuell ausgew√§hlt customer suchen und baskets suchen */
+					/* customer wurde zuerst ausgew‰hlt*/
+
 
 					customers= model("customer").findOneByK_Kundencode(key=value,returnAs='query');
 					baskets=model("basket").findAllByKundencode(customers.K_Kundencode);

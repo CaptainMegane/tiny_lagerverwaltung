@@ -13,7 +13,7 @@
  	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='index.cfm/akten/akte_new/customer=' + this.options[this.selectedIndex].value;")#
+		onchange="location='index.cfm/akten/akte_new/customer:' + this.options[this.selectedIndex].value;")#
 		<cfif baskets.recordCount GT 0>
 	 		#select(
 				 label="Karton: ", objectName="file", property="Karton",
@@ -29,7 +29,7 @@
  	#select(includeBlank="-Kunde ausw&auml;hlen-",
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='index.cfm/akten/akte_new/customer=' + this.options[this.selectedIndex].value;")#
+		onchange="location='index.cfm/akten/akte_new/customer:' + this.options[this.selectedIndex].value;")#
 
 </cfif>
 	#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
