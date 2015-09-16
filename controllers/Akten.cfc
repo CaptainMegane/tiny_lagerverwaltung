@@ -100,6 +100,7 @@
 			<cfset basketid=params.key>
 		<cfelse>
 			<cfset files = model("file").findAll(select="AKTENNUMMER,EINDATUM,KARTON,VERNICHT_DAT,VERNICHTET,VERNICHTETAM,TEXT")>
+			<cfset basketid=files.KARTON>
 		</cfif>
 	</cffunction>
 
