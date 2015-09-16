@@ -39,7 +39,7 @@
 			<cfscript>
 				var Prefix=ListGetAt(params,"=",1);
 				var value=ListGetAt(params,"=",2);
-			switch prefix {
+			switch (prefix) {
 				/* Baset wurde zuerst ausgewählt */
 				case "basket":
 					baskets=model("basket").findOneByKartonnummer(key=value,returnAs='query');
