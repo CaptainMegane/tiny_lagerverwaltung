@@ -93,4 +93,4 @@
 
 </cfoutput>
 
-umlaut-test: ä ö ü ß
+umlaut-test:Ã¤ Ã¶ Ã¼
