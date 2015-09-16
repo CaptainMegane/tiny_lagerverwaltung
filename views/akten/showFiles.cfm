@@ -1,5 +1,9 @@
 <cfoutput>
-<h1>Akten in Karton #files.Karton#</h1>
+<h1>Akten
+	<cfif StructKeyExists(params,"key")> in Karton #files.Karton#
+	<cfelse> aller Kunden
+	</cfif>
+</h1>
 <!-- jQuery -->
 <!-- DataTables CSS -->
 #styleSheetLinkTag("jquery.dataTables.css")#
