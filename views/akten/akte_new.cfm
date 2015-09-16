@@ -61,6 +61,7 @@
 #startFormTag(action="create_file", name="file")#
 
 <!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
+<!--- todo: das muss noch an den controller angepasst werden, Entscheidung anhand keyPrefix --->
 <cfif StructKeyExists(params,"key")>
 
  	#select(
@@ -74,7 +75,7 @@
 
     )#
 <cfelse>
-
+        
  	#select(includeBlank="-Kunde auswählen-",
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
@@ -83,8 +84,8 @@
 	<cfif isDefined("params.customer")>
 
  		#select(
-        label="Karton: ", objectName="file", property="Karton",
-        options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
+			 label="Karton: ", objectName="file", property="Karton",
+			  options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
 
   	  )#
 
