@@ -38,17 +38,20 @@
 			
 			<cfscript>
 				var Prefix=ListGetAt(params,"=",1);
+				var value=ListGetAt(params,"=",2);
 			switch prefix {
-				<!--- Baset wurde zuerst ausgewählt --->
+				/* Baset wurde zuerst ausgewählt */
 				case "basket":
-					baskets=model("basket").findOneByKartonnummer(key=params.key,returnAs='query');
+					baskets=model("basket").findOneByKartonnummer(key=value,returnAs='query');
 					customers=model("customer").findAllByK_Kundencode(baskets.Kundencode);
 					break;
 				case "customer":
-					<!---customer wurde zuerst ausgewählt --->
-					<!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
-					customers= model("customer").findOneByK_Kundencode(params.customer);
+					/* customer wurde zuerst ausgewählt 
+					todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen */
+					
+					customers= model("customer").findOneByK_Kundencode(key=value,returnAs='query');
 					baskets=model("basket").findAllByKundencode(customers.K_Kundencode);
+					break;
 			}
 						
 
