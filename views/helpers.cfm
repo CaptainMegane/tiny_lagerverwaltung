@@ -24,7 +24,7 @@
 	<cfargument   name="linkController" required="no">
 	<cfargument   name="linkAction" required="no">
 	<cfargument   name="linkText" required="no">
-	<cfargument   name="keypreFixt" required="no" default="">
+	<cfargument   name="keyPrefix" required="no" default="">
 
 
 	<cfoutput>
@@ -48,7 +48,7 @@
 				<td>#result[col][currentrow]#</td>
 				</cfloop>
 				<cfif isDefined("linkKey")>
-					<th>#linkTo(text=linkText, controller=linkController, action=linkAction, key=keypreFixt & result[linkKey][currentrow])#</th>
+					<th>#linkTo(text=linkText, controller=linkController, action=linkAction, key=keyPrefix & result[linkKey][currentrow])#</th>
 				</cfif>
 
 
