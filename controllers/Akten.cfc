@@ -33,17 +33,26 @@
 		<cfset customers=model("customer").findAll()>
 		<cfset file = model("basket").new()>
 
-		<!--- Baset wurde zuerst ausgewählt --->
+		
 		<cfif StructKeyExists(params,"key")>
-			<cfset baskets=model("basket").findOneByKartonnummer(key=params.key,returnAs='query')>
-			<cfset customers=model("customer").findAllByK_Kundencode(baskets.Kundencode)>
+			
+			<cfscript>
+				var Prefix=ListGetAt(params,"=",1);
+			switch prefix {
+				<!--- Baset wurde zuerst ausgewählt --->
+				case "basket":
+					baskets=model("basket").findOneByKartonnummer(key=params.key,returnAs='query');
+					customers=model("customer").findAllByK_Kundencode(baskets.Kundencode);
+					break;
+				case "customer":
+					<!---customer wurde zuerst ausgewählt --->
+					<!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
+					customers= model("customer").findOneByK_Kundencode(params.customer);
+					baskets=model("basket").findAllByKundencode(customers.K_Kundencode);
+			}
+						
 
-		<!---customer wurde zuerst ausgewählt --->
-		<cfelseif StructKeyExists(params,"customer")>
-			<!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
-			<cfset customers= model("customer").findOneByK_Kundencode(params.customer)>
-			<cfset baskets=model("basket").findAllByKundencode(customers.K_Kundencode)>
-
+			</cfscript>
 			<cfset file.Eindatum="#DateFormat(now())# #TimeFormat(now())#">
 		
 		</cfif>
