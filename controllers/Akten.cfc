@@ -33,12 +33,12 @@
 		<cfset customers=model("customer").findAll()>
 		<cfset file = model("basket").new()>
 
-		
+
 		<cfif StructKeyExists(params,"key")>
-			
+
 			<cfscript>
-				var Prefix=ListGetAt(params,"=",1);
-				var value=ListGetAt(params,"=",2);
+				var prefix=ListFirst(params.key,"=");
+				var value=ListLast(params.key,"=");
 			switch (prefix) {
 				/* Baset wurde zuerst ausgewählt */
 				case "basket":
@@ -46,18 +46,18 @@
 					customers=model("customer").findAllByK_Kundencode(baskets.Kundencode);
 					break;
 				case "customer":
-					/* customer wurde zuerst ausgewählt 
+					/* customer wurde zuerst ausgewählt
 					todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen */
-					
+
 					customers= model("customer").findOneByK_Kundencode(key=value,returnAs='query');
 					baskets=model("basket").findAllByKundencode(customers.K_Kundencode);
 					break;
 			}
-						
+
 
 			</cfscript>
 			<cfset file.Eindatum="#DateFormat(now())# #TimeFormat(now())#">
-		
+
 		</cfif>
 
 	</cffunction>
@@ -97,6 +97,7 @@
 		<cfinclude template="../views/akten/navigation.cfm">
 		<cfif StructKeyExists(params,"key")>
 			<cfset files = model("file").findAllByKarton(key=params.key,select="AKTENNUMMER,EINDATUM,KARTON,VERNICHT_DAT,VERNICHTET,VERNICHTETAM,TEXT")>
+			<cfset basketid=params.key>
 		<cfelse>
 			<cfset files = model("file").findAll(select="AKTENNUMMER,EINDATUM,KARTON,VERNICHT_DAT,VERNICHTET,VERNICHTETAM,TEXT")>
 		</cfif>

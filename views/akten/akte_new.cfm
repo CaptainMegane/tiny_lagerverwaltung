@@ -56,14 +56,9 @@
     <p class="success">#flash("success")#</p>
 </cfif>
 
-<cfdump var="#params#">
-
 #startFormTag(action="create_file", name="file")#
 
-<!---todo: nur wenn kunde manuell ausgewählt customer suchen und baskets suchen>--->
-<!--- todo: das muss noch an den controller angepasst werden, Entscheidung anhand keyPrefix --->
 <cfif StructKeyExists(params,"key")>
-
  	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
@@ -75,8 +70,8 @@
 
     )#
 <cfelse>
-        
- 	#select(includeBlank="-Kunde auswählen-",
+
+ 	#select(includeBlank="-Kunde ausw�hlen-",
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
 		onchange="location='index.cfm/akten/akte_new/customer=' + this.options[this.selectedIndex].value;")#
@@ -88,9 +83,7 @@
 			  options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer"
 
   	  )#
-
 	</cfif>
-huhu3
 </cfif>
 	#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 
