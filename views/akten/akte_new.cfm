@@ -71,7 +71,7 @@
     )#
 <cfelse>
 
- 	#select(includeBlank="-Kunde auswählen-",
+ 	#select(includeBlank="-Kunde ausw&auml;hlen-",
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
 		onchange="location='index.cfm/akten/akte_new/customer=' + this.options[this.selectedIndex].value;")#
@@ -92,3 +92,5 @@
 #endFormTag()#
 
 </cfoutput>
+
+umlaut-test: ä ö ü ß
