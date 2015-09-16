@@ -44,4 +44,3 @@
 
 </cfoutput>
 
-umlaut-test:ä ö ü
