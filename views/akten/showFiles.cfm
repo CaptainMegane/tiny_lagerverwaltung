@@ -1,6 +1,3 @@
-
-
-
 <cfoutput>
 <h1>Akten in Karton #files.Karton#</h1>
 <!-- jQuery -->

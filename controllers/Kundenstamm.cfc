@@ -1,7 +1,7 @@
 <!---
   --- kundenstamm
   --- -----------
-  ---
+  --- alles rund um die kunden
   --- author: Hugh
   --- date:   01.09.15
   --->

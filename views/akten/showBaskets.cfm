@@ -1,6 +1,3 @@
-
-
-
 <cfoutput>
 <h1>Alle Kartons</h1>
 <!-- jQuery -->

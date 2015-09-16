@@ -1,7 +1,7 @@
 <!---
-  --- kundenstamm
+  --- Akten
   --- -----------
-  ---
+  --- alles rund um die akten
   --- author: Hugh
   --- date:   01.09.15
   --->
