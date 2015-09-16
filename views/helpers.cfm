@@ -7,9 +7,9 @@
 		&nbsp; &nbsp; &nbsp;
 		#linkTo(text="Kundenverwaltung", controller="Kundenstamm", action="showAll")#
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Kartonverwaltung", controller="Akten", action="einlagerung_new")#
+		#linkTo(text="Karton- & Aktenverwaltung", controller="Akten", action="einlagerung_new")#
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Einlagern", controller="Akten", action="akte_new")#
+		#linkTo(text="Akten einlagern", controller="Akten", action="akte_new")#
 	</h5>
 
 	</cfoutput>
