@@ -44,18 +44,36 @@
 <cffunction name="showPirntPage">
 	<!--- 	<cfinclude template="../views/akten/navigation.cfm"> --->
 	<cfset output="">
+	<cfsavecontent variable="output">
+		<cfinclude template="ettiketten_header.cfm">
+	</cfsavecontent>
+	<cfscript>
+		//dump(output);
+		//abort;
+	</cfscript>
+
 	 <cfloop index="intI" from="1" to="#params.barcode.anzahl#" step="1">
 		<cfset barcode=intI>
 		<cfset barcode=NumberFormat(barcode,"00000000")>
-		<cfset getOneBarcode(barcode)>
+		<cfset barcodeImage=getOneBarcode(barcode)>
 
 		<cfsavecontent variable="output">
 			<cfoutput>
+
 					#output#
-					<cfimage action="writeToBrowser" source="#barcodeImage#" format="jpg">
-					<br>
-					#barcode#
-					<br>
+					<td width=3D265 valign=3Dtop style=3D'width:198.4pt;padding:0cm .75pt 0cm=
+					 .75pt;
+					  height:116.2pt'>
+					  <p class=3DMsoNormal style=3D'margin-top:0cm;margin-right:12.9pt;margin-bottom:0cm;margin-left:12.9pt;margin-bottom:.0001pt;line-height:normal'>
+						  <!--- <cfimage action="writeToBrowser" source="#barcodeImage#" format="jpg"> --->
+						  <img src="#ImageWriteBase64(barcodeImage, "d:\test.jpg", "jpg",true)#" type="image/jpg">
+					<br>#barcode#</p>
+					  </td>
+			 <cfif ((NOT (intI MOD 3)) AND (intI LT #params.barcode.anzahl#))>
+				</tr>
+				 <tr style=3D'mso-yfti-irow:0;mso-yfti-firstrow:yes;page-break-inside:avoid;
+				  height:116.2pt'>
+			 </cfif>
 			</cfoutput>
 		</cfsavecontent>
 	</cfloop>
