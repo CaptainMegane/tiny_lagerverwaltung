@@ -10,7 +10,7 @@
 
 #startFormTag(action="showPirntPage")#
 
-    #textField(objectName="barcode", property="code", label="Zeichenfolge: ")#
+    #textField(objectName="barcode", property="anzahl", label="Anzahl Barcodes: ")#
 
 	  <div>#submitTag()#</div>
 #endFormTag()#

@@ -7,8 +7,8 @@
 	    <p class="success">#flash("success")#</p>
 </cfif>
 <br>
-<cfimage action="writeToBrowser" source="#barcodeImage#" format="jpg">
+<!--- <cfimage action="writeToBrowser" source="#barcodeImage#" format="jpg"> --->
 <br>
-#barcode#
+#output#
 
 </cfoutput>
