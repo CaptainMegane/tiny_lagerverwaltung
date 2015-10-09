@@ -19,11 +19,13 @@
 <!--- Set the header information. --->
 <cfheader
 	name="content-disposition"
-	value="attachment; filename=karton-labels.mht"
+	value="attachment; filename=karton-labels.html"
 	/>
 
 <!--- Set the content to be a Microsoft Word file. --->
+<!---type="application/msword"--->
 <cfcontent
-	type="application/msword"
+	type="text/html"
+
 	variable="#ToBinary( ToBase64( strMHTData ) )#"
 	/>
