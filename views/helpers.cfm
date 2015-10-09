@@ -11,7 +11,7 @@
 		&nbsp; &nbsp; &nbsp;
 		#linkTo(text="Akten einlagern", controller="Akten", action="akte_new")#
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Barcodes drucken", controller="barcodes", action="generateKartoncodes",target="_blank")#
+		#linkTo(text="Barcodes drucken", controller="barcodes", action="generateKartoncodes")#
 	</h5>
 
 	</cfoutput>
