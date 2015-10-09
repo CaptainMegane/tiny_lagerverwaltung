@@ -65,10 +65,10 @@
 					 .75pt;
 					  height:116.2pt'>
 					  <p class=3DMsoNormal style=3D'margin-top:0cm;margin-right:12.9pt;margin-bottom:0cm;margin-left:12.9pt;margin-bottom:.0001pt;line-height:normal'>
-						  <!--- <cfimage action="writeToBrowser" source="#barcodeImage#" format="jpg"> --->
-						<cfset ImageWriteBase64(barcodeImage, "ram:///intI", "jpg" ,"true")>
-						<cffile action = "read"  file = "ram:///intI" variable = "imageData">
-						<img  src=3D"#imageData#" />						  
+						  <cfimage action="writeToBrowser" source="#barcodeImage#" format="jpg">
+						<!---<cfset ImageWriteBase64(barcodeImage, "ram:///intI", "jpg" ,"true")>--->
+						<!---<cffile action = "read"  file = "ram:///intI" variable = "imageData">--->
+						<!---<img  src=3D"#imageData#" />--->						  
 						
 						<br>#barcode#</p>
 					  </td>
