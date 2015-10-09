@@ -23,7 +23,7 @@
 	codeEAN= createobject("java","com.lowagie.text.pdf.Barcode128");
 	codeEAN.setCodeType(codeEAN.CODE128);
 	
-	//codeEAN.setBarHeight(50);
+	codeEAN.setBarHeight(50);
 	codeEAN.setCode(code2generate);
 	codeEAN.setAltText(code2generate);
 	color =  createobject("java","java.awt.Color");
