@@ -19,7 +19,7 @@
 <!--- Set the header information. --->
 <cfheader
 	name="content-disposition"
-	value="attachment; filename=karton-labels.html"
+	value="attachment; filename=karton-labels.mht"
 	/>
 
 <!--- Set the content to be a Microsoft Word file. --->
