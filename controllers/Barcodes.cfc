@@ -68,7 +68,7 @@
 						  <!--- <cfimage action="writeToBrowser" source="#barcodeImage#" format="jpg"> --->
 						<cfset ImageWriteBase64(barcodeImage, "ram:///intI", "jpg" ,"true")>
 						<cffile action = "read"  file = "ram:///intI" variable = "imageData">
-						<img alt=3D"image" src=3D"#imageData#"/>						  
+						<img alt=3D'image' src=3D'imageData#' />						  
 					<br>#barcode#</p>
 					  </td>
 			 <cfif ((NOT (intI MOD 3)) AND (intI LT #params.barcode.anzahl#))>
