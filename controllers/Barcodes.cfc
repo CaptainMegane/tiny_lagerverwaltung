@@ -54,7 +54,7 @@
 
 	 <cfloop index="intI" from="1" to="#params.barcode.anzahl#" step="1">
 		<cfset barcode=intI>
-		<cfset barcode=NumberFormat(barcode,"00000000")>
+		<cfset barcode=NumberFormat(barcode,"000")>
 		<cfset barcodeImage=getOneBarcode(barcode)>
 
 		<cfsavecontent variable="output">
