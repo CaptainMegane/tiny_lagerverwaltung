@@ -23,9 +23,9 @@
 	/>
 
 <!--- Set the content to be a Microsoft Word file. --->
-<!---type="application/msword"--->
+
 <cfcontent
-	type="text/html"
+	type="application/msword"
 
 	variable="#ToBinary( ToBase64( strMHTData ) )#"
 	/>
