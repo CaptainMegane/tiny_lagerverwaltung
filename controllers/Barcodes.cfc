@@ -54,7 +54,7 @@
 
 	 <cfloop index="intI" from="1" to="#params.barcode.anzahl#" step="1">
 		<cfset barcode=intI>
-		<cfset barcode=NumberFormat(barcode,"0")>
+		<cfset barcode=NumberFormat(barcode,"00000000")>
 		<cfset barcodeImage=getOneBarcode(barcode)>
 
 		<cfsavecontent variable="output">
@@ -64,15 +64,11 @@
 					<td width=3D265 valign=3Dtop style=3D'width:198.4pt;padding:0cm .75pt 0cm=
 					 .75pt;
 					  height:116.2pt'>
-					  <p class=3DMsoNormal style=3D'margin-top:0cm;margin-right:12.9pt;margin-bottom:0cm;margin-left:12.9pt;margin-bottom:.0001pt;line-height:normal'>
-						  
-						  <cfset ImageWrite(barcodeImage, "/var/www/live/html/lagerverwaltung/barcodes/#intI#.jpg")>
-						  <!---<cfimage action="writeToBrowser" source="/var/www/live/html/lagerverwaltung/barcodes/#intI#.jpg" format="jpg">--->
-						  <img src=3D"http://s18591474.onlinehome-server.info/lagerverwaltung/barcodes/#intI#.jpg"/>
-						<!---<cffile action = "read"  file = "ram:///intI" variable = "imageData">--->
-						<!---<img  src=3D"#imageData#" />--->						  
-						
-						<br>#barcode#</p>
+					<p class=3DMsoNormal style=3D'margin-top:0cm;margin-right:12.9pt;margin-bottom:0cm;margin-left:12.9pt;margin-bottom:.0001pt;line-height:normal'>
+						cfset ImageWrite(barcodeImage, "/var/www/live/html/lagerverwaltung/barcodes/#intI#.jpg")>
+						<img src=3D"http://s18591474.onlinehome-server.info/lagerverwaltung/barcodes/#intI#.jpg"/>
+						<br>#barcode#
+  					</p>
 					  </td>
 			 <cfif ((NOT (intI MOD 3)) AND (intI LT #params.barcode.anzahl#))>
 				</tr>
