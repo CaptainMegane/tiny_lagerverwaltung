@@ -1,10 +1,11 @@
 <cfsavecontent variable="strMHTData">
-	<!---
+	<cfoutput>
+		#output#	
+	</cfoutput><!---
 		Include the MHT data. We are doing this as
 		a CFSaveContent so that we can have better
 		trim and streaming control.
 	--->
-	#output#
 </cfsavecontent>
 
 
