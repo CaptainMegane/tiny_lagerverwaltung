@@ -22,8 +22,8 @@
 
 	codeEAN= createobject("java","com.lowagie.text.pdf.Barcode128");
 	codeEAN.setCodeType(codeEAN.CODE128);
-	codeEAN.setSize("15");
-	codeEAN.setBarHeight(50);
+	
+	//codeEAN.setBarHeight(50);
 	codeEAN.setCode(code2generate);
 	codeEAN.setAltText(code2generate);
 	color =  createobject("java","java.awt.Color");
@@ -54,7 +54,7 @@
 
 	 <cfloop index="intI" from="1" to="#params.barcode.anzahl#" step="1">
 		<cfset barcode=intI>
-		<cfset barcode=NumberFormat(barcode,"000")>
+		<cfset barcode=NumberFormat(barcode,"0")>
 		<cfset barcodeImage=getOneBarcode(barcode)>
 
 		<cfsavecontent variable="output">
