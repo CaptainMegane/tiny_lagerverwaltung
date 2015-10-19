@@ -43,7 +43,7 @@
 				/* Baset wurde zuerst ausgewählt */
 				case "basket":
 					baskets=model("basket").findOneByKartonnummer(key=value,select="Kundencode,customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files",returnAs='query');
-					baskets_select=model("basket").findOneByKartonnummer(key=value,select="DISTINCT KARTONNUMMER",returnAs='query');
+					baskets_select=model("basket").findOneByKartonnummer(key=value,select="KARTONNUMMER",returnAs='query');
 					customers=model("customer").findAllByK_Kundencode(baskets.Kundencode);
 					basket = model("basket").new();
 					break;
