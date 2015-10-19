@@ -8,6 +8,7 @@ component extends="Model" persistent=false {
 	function init()
 	{
 		hasOne(name="customers", modelName="Customer", joinKey="Kundencode", foreignKey="K_Kundencode");
+		hasMany(name="files", modelName="File", joinKey="Kartonnummer", foreignKey="Karton");
 	}
 
 }

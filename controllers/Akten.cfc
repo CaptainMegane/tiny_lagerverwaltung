@@ -50,7 +50,8 @@
 
 
 					customers= model("customer").findOneByK_Kundencode(key=value,returnAs='query');
-					baskets=model("basket").findAllByKundencode(customers.K_Kundencode);
+					baskets=model("basket").findAllByKundencode(key=customers.K_Kundencode,select="customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files");
+					basket=	 model("basket").new();
 					break;
 			}
 
@@ -74,6 +75,21 @@
 	</cffunction>
 
 	<cffunction name="create_file">
+
+
+
+
+		<cfscript>
+
+		if( params.file.Karton EQ "")
+		{
+			params.file.Karton=params.basket.Kartonnummer;
+			params.basket.Kundencode=params.customer.Kundencode;
+			basket = model("basket").create(params.basket);
+
+		}
+		</cfscript>
+
         <cfinclude template="../views/akten/navigation.cfm">
 	    <cfset file = model("file").create(params.file)>
 	    <cfset redirectTo(
