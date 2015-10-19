@@ -98,7 +98,7 @@
 	    <cfset redirectTo(
 	        action="akte_new",
 	        key="customer:#params.customer.Kundencode#",
-	        success="Akte #file.Aktennummer# in Karton #file.Karton# für Kunde #params.customer.Kundencode# erfolgreich eingelagert."
+	        success="Akte #file.Aktennummer# in Karton #file.Karton# f&uuml;r Kunde #params.customer.Kundencode# erfolgreich eingelagert."
 	    )>
 
 	</cffunction>
