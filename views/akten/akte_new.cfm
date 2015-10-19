@@ -39,7 +39,7 @@ $(document).ready( function () {
 		<cfif baskets.recordCount GT 0>
 	 		#select(includeBlank="Neuer Karton",
 				 label="Karton: ", objectName="file", property="Karton",
-				  options=baskets, 	textField="Kartonnummer", valueField="Kartonnummer",
+				  options=baskets_select, 	textField="Kartonnummer", valueField="Kartonnummer",
 				  onChange="if(this.options[this.selectedIndex].value <> 'Neuer Karton') { alert('neu');} "
 
 	  	  )#
