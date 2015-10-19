@@ -42,15 +42,18 @@
 			switch (prefix) {
 				/* Baset wurde zuerst ausgewählt */
 				case "basket":
-					baskets=model("basket").findOneByKartonnummer(key=value,returnAs='query');
+					baskets=model("basket").findOneByKartonnummer(key=value,select="Kundencode,customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files",returnAs='query');
+					baskets_select=model("basket").findOneByKartonnummer(key=value,select="DISTINCT KARTONNUMMER",returnAs='query');
 					customers=model("customer").findAllByK_Kundencode(baskets.Kundencode);
+					basket = model("basket").new();
 					break;
 				case "customer":
 					/* customer wurde zuerst ausgewählt*/
 
 
 					customers= model("customer").findOneByK_Kundencode(key=value,returnAs='query');
-					baskets=model("basket").findAllByKundencode(key=customers.K_Kundencode,select="customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files");
+					baskets= model("basket").findAllByKundencode(key=customers.K_Kundencode,select="customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files");
+					baskets_select=model("basket").findOneByKartonnummer(key=customers.K_Kundencode,select="KARTONNUMMER",returnAs='query');
 					basket=	 model("basket").new();
 					break;
 			}
@@ -94,7 +97,8 @@
 	    <cfset file = model("file").create(params.file)>
 	    <cfset redirectTo(
 	        action="akte_new",
-	        success="Akte #file.Aktennummer# in Karton #file.Karton# erfolgreich angelegt."
+	        key="customer:#params.customer.Kundenname#",
+	        success="Akte #file.Aktennummer# in Karton #file.Karton# für Kunde #params.customer.Kundencode# erfolgreich eingelagert."
 	    )>
 
 	</cffunction>
