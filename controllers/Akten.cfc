@@ -97,7 +97,7 @@
 	    <cfset file = model("file").create(params.file)>
 	    <cfset redirectTo(
 	        action="akte_new",
-	        key="customer:#params.customer.Kundenname#",
+	        key="customer:#params.customer.Kundencode#",
 	        success="Akte #file.Aktennummer# in Karton #file.Karton# für Kunde #params.customer.Kundencode# erfolgreich eingelagert."
 	    )>
 
