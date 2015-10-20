@@ -15,6 +15,13 @@ $(document).ready( function () {
     $('#table').DataTable();
 } );
 
+function checkKarton(select)
+{
+	if(select.options[select.selectedIndex].value == 'Neuer Karton')
+	{
+		alert('neu');
+	}	
+}
 
 </script>
 
@@ -40,7 +47,7 @@ $(document).ready( function () {
 	 		#select(includeBlank="Neuer Karton",
 				 label="Karton: ", objectName="file", property="Karton",
 				  options=baskets_select, 	textField="Kartonnummer", valueField="Kartonnummer",
-				  onChange="if(this.options[this.selectedIndex].value <> 'Neuer Karton') { alert('neu');} "
+				  onChange="checkKarton(this)"
 
 	  	  )#
 	  	  <br>
