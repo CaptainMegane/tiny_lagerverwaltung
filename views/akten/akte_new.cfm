@@ -17,7 +17,7 @@ $(document).ready( function () {
 
 function checkKarton(select)
 {
-	if(select.options[select.selectedIndex].value == 'Neuer Karton')
+	if(select.options[select.selectedIndex].value == '')
 	{
 		alert('neu');
 	}	
