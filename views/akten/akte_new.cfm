@@ -19,8 +19,12 @@ function checkKarton(select)
 {
 	if(select.options[select.selectedIndex].value == '')
 	{
-		alert('neu');
-	}	
+		$('#neuerKarton').show();
+	}
+	else
+	{
+		$('#neuerKarton').hide();
+	}
 }
 
 </script>
@@ -47,11 +51,11 @@ function checkKarton(select)
 	 		#select(includeBlank="Neuer Karton",
 				 label="Karton: ", objectName="file", property="Karton",
 				  options=baskets_select, 	textField="Kartonnummer", valueField="Kartonnummer",
-				  onChange="checkKarton(this)"
+				  onBlur="checkKarton(this)" 
 
 	  	  )#
 	  	  <br>
-<div id="neuerKarton" style="display:true">
+<div id="neuerKarton" style="display:none">
 <hr>
 	<h6>Nur ausf&uuml;llen, wenn "Neuer Karton" gew&auml;hlt!</h6>
 		#textField(objectName="basket", property="Kartonnummer", label="Kartonnummer: ")#<br>
