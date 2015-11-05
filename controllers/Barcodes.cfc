@@ -65,9 +65,9 @@
 					 .75pt;
 					  height:116.2pt'>
 					<p class=3DMsoNormal style=3D'margin-top:0cm;margin-right:12.9pt;margin-bottom:0cm;margin-left:12.9pt;margin-bottom:.0001pt;line-height:normal'>
-						<cfset ImageWrite(barcodeImage, "/var/www/live/html/barcodes/#intI#.jpg")>
+						<cfset ImageWrite(barcodeImage, "/var/www/live/html/lagerverwaltung/barcodes/#intI#.jpg")>
 						<br>
-						<img src=3D"http://s18591474.onlinehome-server.info/barcodes/#intI#.jpg"/>
+						<img src=3D"http://s18591474.onlinehome-server.info/lagerverwaltung/barcodes/#intI#.jpg"/>
 						<br>#barcode#
   					</p>
 					  </td>
