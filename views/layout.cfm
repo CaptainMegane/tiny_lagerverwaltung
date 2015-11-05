@@ -18,9 +18,9 @@
 	<div class="container_12" style="background:#C6B69D">
 	<div style="background:#DEE0DD; border-radius: 10px 10px 0px 0px;   padding: 20px;  ">
 
-		<img src="http://www.lagerplace24.de/s/misc/logo.gif?t=1440853842">
+<!---		<img src="http://www.lagerplace24.de/s/misc/logo.gif?t=1440853842">
 
-		<img src="http://www.lagerplace24.de/s/img/emotionheader.jpg?1439064682.920px.199px" id="emotion-header-img" alt="">
+		<img src="http://www.lagerplace24.de/s/img/emotionheader.jpg?1439064682.920px.199px" id="emotion-header-img" alt=""> --->
 	</div>
 	<div style="background:#B72C3C">
 
