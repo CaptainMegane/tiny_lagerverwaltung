@@ -14,6 +14,16 @@
 		<cfset barcode = model("file").new()>
 
 	</cffunction>
+	<cffunction name="createNewBarcode">
+		<cfargument   name="barcode_type" required="yes" type="string">
+		 
+		 <cfscript>
+		 	barcode_temp = model("barcode_#barcode_type#").new();
+			barcode_temp.save();
+			return barcode_temp.code;
+		 </cfscript>
+		 
+	</cffunction>
 
 <cffunction name="getOneBarcode">
 	<cfargument   name="code2generate" required="yes">
@@ -42,6 +52,7 @@
 </cffunction>
 
 <cffunction name="showPirntPage">
+	
 	<!--- 	<cfinclude template="../views/akten/navigation.cfm"> --->
 	<cfset output="">
 	<cfsavecontent variable="output">
@@ -53,9 +64,11 @@
 	</cfscript>
 
 	 <cfloop index="intI" from="1" to="#params.barcode.anzahl#" step="1">
-		<cfset barcode=intI>
-		<cfset barcode=NumberFormat(barcode,"00000000")>
-		<cfset barcodeImage=getOneBarcode(barcode)>
+		<cfset barcodeToCreate=createNewBarcode(params.barcode.barcode_group)>
+		<cfset barcode=NumberFormat(barcodeToCreate,"00000000")>
+		<cfset barcodeString=(params.barcode.barcode_group & barcode)>
+		<cfdump var="#barcodeString#">
+		<cfset barcodeImage=getOneBarcode(barcodeString)>
 
 		<cfsavecontent variable="output">
 			<cfoutput>
@@ -65,10 +78,10 @@
 					 .75pt;
 					  height:116.2pt'>
 					<p class=3DMsoNormal style=3D'margin-top:0cm;margin-right:12.9pt;margin-bottom:0cm;margin-left:12.9pt;margin-bottom:.0001pt;line-height:normal'>
-						<cfset ImageWrite(barcodeImage, "/var/www/live/html/lagerverwaltung/barcodes/#intI#.jpg")>
+						<cfset ImageWrite(barcodeImage, "/var/www/live/html/lagerverwaltung/barcodes/#barcodeString#.jpg")>
 						<br>
-						<img src=3D"http://s18591474.onlinehome-server.info/lagerverwaltung/barcodes/#intI#.jpg"/>
-						<br>#barcode#
+						<img src=3D"http://s18591474.onlinehome-server.info/lagerverwaltung/barcodes/#barcodeString#.jpg"/>
+						<br>#barcodeString#
   					</p>
 					  </td>
 			 <cfif ((NOT (intI MOD 3)) AND (intI LT #params.barcode.anzahl#))>
