@@ -22,10 +22,8 @@
  	<div style="background:#DEE0DD; border-radius: 10px 10px 0px 0px;   padding: 20px;  "> 
  
  
- 		<img src="http://www.lagerplace24.de/s/misc/logo.gif?t=1440853842"> 
+		<center><img src="http://www.tv-ebersteinburg.de/images/IMG/Baustelle.jpg" width="30%" height="30%"> </center>
  
- 
- 		<img src="http://www.lagerplace24.de/s/img/emotionheader.jpg?1439064682.920px.199px" id="emotion-header-img" alt=""> 
  	</div> 
  	<div style="background:#B72C3C"> 
  		&nbsp;
