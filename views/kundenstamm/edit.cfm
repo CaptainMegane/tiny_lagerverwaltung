@@ -21,9 +21,9 @@
 
 	#textField(objectName="customer", property="K_Kundenvertreter", label="Kontaktperson: ")#
 
-    #textField(objectName="customer", property="K_Straﬂe", label="Stra&szlig;e, Hausnummer: ")#
+    #textField(objectName="customer", property="K_Strasse", label="Stra&szlig;e, Hausnummer: ")#
 
-	#textField(objectName="customer", property="K_PLZ", label="PLZ: ")#
+	#textField(objectName="customer", property="K_Postleitzahl", label="PLZ: ")#
 
     #textField(objectName="customer", property="K_Ort", label="Ort: ")#
 
