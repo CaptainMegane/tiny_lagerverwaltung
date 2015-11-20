@@ -12,7 +12,7 @@
 
 	#select( 
          label="Barcdoe Typ (Akte oder Karton): ", objectName="barcode", property="barcode_group", 
-         options="barcode_type", textField="type", valueField="type")#
+         options="A,K")#
 
     #textField(objectName="barcode", property="anzahl", label="Anzahl Barcodes: ")#
 
