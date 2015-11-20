@@ -10,6 +10,10 @@
 
 #startFormTag(action="showPirntPage")#
 
+	#select( 
+         label="Barcdoe Typ (Akte oder Karton): ", objectName="barcode", property="barcode_group", 
+         options="barcode_type", textField="type", valueField="type")#
+
     #textField(objectName="barcode", property="anzahl", label="Anzahl Barcodes: ")#
 
 	  <div>#submitTag()#</div>
