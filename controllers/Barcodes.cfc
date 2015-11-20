@@ -21,7 +21,7 @@
 		 	barcode_temp = model("barcode").new()
 		 	barcode.barcode_group=barcode_type;
 		 	new_barcode=model("barcode").create(barcode_temp)
-		 	return new_barcode.barcode;
+		 	return new_barcode;
 		 </cfscript>
 		 
 	</cffunction>
@@ -67,8 +67,8 @@
 	 <cfloop index="intI" from="1" to="#params.barcode.anzahl#" step="1">
 		<cfset barcode=intI>
 		barcodeToCreate=createNewBarcode(params.barcdoe.barcode_group);
-		<cfset barcode=NumberFormat(barcodeToCreate,"00000000")>
-		<cfset barcodeImage=getOneBarcode(barcodeToCreate)>
+		<cfset barcode=NumberFormat(barcodeToCreate.barcode,"00000000")>
+		<cfset barcodeImage=getOneBarcode(barcodeToCreate.barcode_group & barcodeToCreate.barcode)>
 
 		<cfsavecontent variable="output">
 			<cfoutput>
