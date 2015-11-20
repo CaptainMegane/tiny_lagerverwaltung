@@ -23,7 +23,7 @@
 
     #textField(objectName="customer", property="K_Strasse", label="Stra&szlig;e, Hausnummer: ")#
 
-	#textField(objectName="customer", property="K_PLZ", label="PLZ: ")#
+	#textField(objectName="customer", property="K_Postleitzahl", label="PLZ: ")#
 
     #textField(objectName="customer", property="K_Ort", label="Ort: ")#
 
