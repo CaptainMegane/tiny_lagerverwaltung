@@ -14,6 +14,17 @@
 		<cfset barcode = model("file").new()>
 
 	</cffunction>
+	<cffunction name="createNewBarcode">
+		<cfargument   name="barcode_type" required="yes">
+		 
+		 <cfscript>
+		 	barcode_temp = model("barcode").new()
+		 	barcode.barcode_group=barcode_type;
+		 	new_barcode=model("barcode").create(barcode_temp)
+		 	return new_barcode.barcode;
+		 </cfscript>
+		 
+	</cffunction>
 
 <cffunction name="getOneBarcode">
 	<cfargument   name="code2generate" required="yes">
@@ -42,6 +53,7 @@
 </cffunction>
 
 <cffunction name="showPirntPage">
+	
 	<!--- 	<cfinclude template="../views/akten/navigation.cfm"> --->
 	<cfset output="">
 	<cfsavecontent variable="output">
@@ -54,8 +66,9 @@
 
 	 <cfloop index="intI" from="1" to="#params.barcode.anzahl#" step="1">
 		<cfset barcode=intI>
-		<cfset barcode=NumberFormat(barcode,"00000000")>
-		<cfset barcodeImage=getOneBarcode(barcode)>
+		barcodeToCreate=createNewBarcode(params.barcdoe.barcode_group);
+		<cfset barcode=NumberFormat(barcodeToCreate,"00000000")>
+		<cfset barcodeImage=getOneBarcode(barcodeToCreate)>
 
 		<cfsavecontent variable="output">
 			<cfoutput>
