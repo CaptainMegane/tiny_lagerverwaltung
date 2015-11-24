@@ -49,7 +49,10 @@ function checkBarcodeField(text)
 
 function mySubmit()
 {
-	document.file.submit();
+	if(document.file.button1.value == "Absenden!")
+	{
+		document.file.submit();
+	}
 }
 </script>
 
@@ -60,7 +63,7 @@ function mySubmit()
     <p class="success">#flash("success")#</p>
 </cfif>
 
-#startFormTag(action="create_file_new", name="file", onsubmit="return false;")#
+#startFormTag(action="create_file_new", name="file", onsubmit="mySubmit()")#
 
 <cfif StructKeyExists(params,"key")>
  	#select(
@@ -80,7 +83,7 @@ function mySubmit()
 		
 
     <div>#submitTag()#</div>
-    <input type="button" onclick="mysubmit" name="button1" value="Absenden!">
+    <input type="button" onclick="mySubmit" name="button1" value="Absenden!">
     <cfelse>
 
  	#select(includeBlank="-Kunde ausw&auml;hlen-",
