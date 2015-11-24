@@ -39,25 +39,25 @@ function checkKarton(select)
 
 #startFormTag(action="create_file", name="file")#
 
-<cfif StructKeyExists(params,"kunde")>
+<cfif StructKeyExists(params,"key")>
  	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
-        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" 
-		onchange="location='./index.cfm?controller=akten&action=akte_new&key=customer:' + this.options[this.selectedIndex].value;")#
+        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
+		onchange="location='./index.cfm?controller=akten&action=barcode_einlagerung&key=customer:' + this.options[this.selectedIndex].value;")#
 		<br>
 		<hr>
 			  	 <br> #lagerlistTable(baskets)#<br>
 		<hr>
 		#textField(objectName="barcode_as", property="Code", label="Barcode-Eingabe: ", )#<br>
 		<hr>
-		#textField(objectName="basket", property="Karton", label="Kartonnummer: ", )#<br>
+		#textField(objectName="basket", property="Karton", label="Kartonnummer: " )#<br>
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ")#<br>
 		#textField(objectName="basket", property="Lagerort", label="Lagerort: ")#<br>
     #textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
 
     <div>#submitTag()#</div>
-
+</cfif>
 #endFormTag()#
 
 </cfoutput>
