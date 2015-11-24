@@ -28,6 +28,20 @@ function checkKarton(select)
 	}
 }
 
+function checkBarcodeField(text)
+{
+	alert("erkannter text: "+text);
+
+	if (text.substring(1,1) EQ "A")
+	{
+		$('#file-Aktennummer').value=text.substring(2,text.length);
+	}
+	else
+	if (text.substring(1,1) EQ "K")
+	{
+		$('#file-Aktennummer').value=text.substring(2,text.length);
+	}
+}
 </script>
 
 <h1>Neue Akte einlagern</h1>
@@ -48,11 +62,11 @@ function checkKarton(select)
 		<hr>
 			  	 <br> #lagerlistTable(baskets)#<br>
 		<hr>
-		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: " )#<br>
+		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: ", onblur="javascript:checkBarcodeField(this.value)" )#<br>
 		<hr>
-		#textField(objectName="basket", property="Karton", label="Kartonnummer: " )#<br>
-		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ")#<br>
+		#textField(objectName="file", property="Karton", label="Kartonnummer: " )#<br>
 		#textField(objectName="basket", property="Lagerort", label="Lagerort: ")#<br>
+		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ")#<br>
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
 
