@@ -76,6 +76,7 @@ function checkBarcodeField(text)
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		&nbsp;<input type="button" onclick="submit()" name="button1" value="Absenden!">
 		<br>
+		<br>
 		<hr>
 		<br> #lagerlistTable(baskets)#<br>
 		
