@@ -66,8 +66,6 @@ function checkBarcodeField(text)
 		onchange="location='./index.cfm?controller=akten&action=barcode_einlagerung&key=customer:' + this.options[this.selectedIndex].value;")#
 		<br>
 		<hr>
-			  	 <br> #lagerlistTable(baskets)#<br>
-		<hr>
 		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: ", onkeyup="if(event.keyCode==13) checkBarcodeField(this.value)" )#<br>
 		<hr>
 		#textField(objectName="file", property="Karton", label="Kartonnummer: ", readonly="true" )#<br>
@@ -75,9 +73,10 @@ function checkBarcodeField(text)
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ", readonly="true")#<br>
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
-
- 
-    <input type="button" onclick="submit()" name="button1" value="Absenden!">
+    		<p><input type="button" onclick="submit()" name="button1" value="Absenden!"></p>
+		<hr>
+		<br> #lagerlistTable(baskets)#<br>
+		
     <cfelse>
 
  	#select(includeBlank="-Kunde ausw&auml;hlen-",
