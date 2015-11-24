@@ -154,8 +154,8 @@
 	<cffunction name="create_file_new">
 
 		<cfscript>
- 		basket=model("basket").findOneByKartonnummer(key=params.file.Karton,select="Kundencode,KARTONNUMMER,LAGERORT",returnAs='query');
-		if( basket.recordCount NEQ 1)
+ 		basket=model("basket").findOneByKartonnummer(key=params.file.Karton,select="Kundencode,KARTONNUMMER,LAGERORT");
+		if( !isDefined("basket.Kartonnummer"))
 		{
 			basket.Kartonnummer=params.file.Karton;	
 			params.basket.Kundencode=params.customer.Kundencode;
