@@ -32,12 +32,12 @@ function checkBarcodeField(text)
 {
 	alert("erkannter text: "+text);
 
-	if (text.substring(1,1) = "A")
+	if (text.substring(1) = "A")
 	{
 		$('#file-Aktennummer').value=text.substring(2,text.length);
 	}
 	else
-	if (text.substring(1,1) = "K")
+	if (text.substring(1) = "K")
 	{
 		$('#file-Aktennummer').value=text.substring(2,text.length);
 	}
