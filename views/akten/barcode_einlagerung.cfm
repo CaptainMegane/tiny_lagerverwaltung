@@ -45,15 +45,9 @@ function checkBarcodeField(text)
 		//alert("a gefunden");
 		$('#file-Karton').val(text.substring(1,text.length));
 	}
+	$('#barcode_field-Code').val("");
 }
 
-function mySubmit()
-{
-	if($('#file-Text').val)
-	{
-		document.file.submit();
-	}
-}
 </script>
 
 <h1>Neue Akte einlagern</h1>
@@ -74,7 +68,7 @@ function mySubmit()
 		<hr>
 			  	 <br> #lagerlistTable(baskets)#<br>
 		<hr>
-		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: ", onblur="javascript:checkBarcodeField(this.value)" )#<br>
+		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: ", onkeyup="if(event.keyCode==13) checkBarcodeField(this.value)" )#<br>
 		<hr>
 		#textField(objectName="file", property="Karton", label="Kartonnummer: ", readonly="true" )#<br>
 		#textField(objectName="basket", property="Lagerort", label="Lagerort (Wird nur gespeichert, wenn neuer Karton!): " )# <br>
