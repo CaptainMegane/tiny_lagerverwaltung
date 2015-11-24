@@ -139,16 +139,12 @@
 	    <cfset redirectTo(
 	        action="akte_new",
 	        key="customer:#params.customer.Kundencode#",
-	        params="basket=#file.Karton#"
 	        success="Akte #file.Aktennummer# in Karton #file.Karton# f&uuml;r Kunde #params.customer.Kundencode# erfolgreich eingelagert."
 	    )>
 
 	</cffunction>
 
 	<cffunction name="create_file_new">
-
-
-
 
 		<cfscript>
 
@@ -166,6 +162,7 @@
 	    <cfset redirectTo(
 	        action="barcode_einlagerung",
 	        key="customer:#params.customer.Kundencode#",
+	        params="basket=#file.Karton#",
 	        success="Akte #file.Aktennummer# in Karton #file.Karton# f&uuml;r Kunde #params.customer.Kundencode# erfolgreich eingelagert."
 	    )>
 
