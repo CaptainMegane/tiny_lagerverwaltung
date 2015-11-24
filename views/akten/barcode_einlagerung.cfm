@@ -42,7 +42,7 @@ function checkKarton(select)
 <cfif StructKeyExists(params,"kunde")>
  	#select(
         label="Kundenname: ", objectName="customer", property="Kundencode",
-        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
+        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" 
 		onchange="location='./index.cfm?controller=akten&action=akte_new&key=customer:' + this.options[this.selectedIndex].value;")#
 		<br>
 		<hr>
