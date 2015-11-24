@@ -1,4 +1,6 @@
 
+<cfparam name="params.basket" default="">
+
 <cfoutput>
 
 <!-- jQuery -->
@@ -66,8 +68,8 @@ function checkBarcodeField(text)
 		<hr>
 		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: ", onblur="javascript:checkBarcodeField(this.value)" )#<br>
 		<hr>
-		#textField(objectName="file", property="Karton", label="Kartonnummer: " )#<br>
-		#textField(objectName="basket", property="Lagerort", label="Lagerort: ")#<br>
+		#textField(objectName="file", property="Karton", label="Kartonnummer: ", value=params.basket )#<br>
+		#textField(objectName="basket", property="Lagerort", label="Lagerort: " )#<br>
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ")#<br>
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
