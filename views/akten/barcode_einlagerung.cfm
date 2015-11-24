@@ -55,7 +55,9 @@ function checkBarcodeField(text)
 <cfoutput>
 
 <cfif flashKeyExists("success")>
-    <p class="success">#flash("success")#</p>
+    <p class="success"><b>#flash("success")#</b></p>
+    <br>
+    <hr>
 </cfif>
 
 #startFormTag(action="create_file_new", name="file", onsubmit="mySubmit()")#
@@ -73,7 +75,7 @@ function checkBarcodeField(text)
 		#textField(objectName="basket", property="Lagerort", label="Lagerort (Wird nur gespeichert, wenn neuer Karton!): " )# <br>
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ", readonly="true")#<br>
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
-		
+		<br>
     		<p><input type="button" onclick="submit()" name="button1" value="Absenden!"></p>
 		<hr>
 		<br> #lagerlistTable(baskets)#<br>
