@@ -53,10 +53,17 @@ function checkKarton(select)
 		#textField(objectName="basket", property="Karton", label="Kartonnummer: " )#<br>
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ")#<br>
 		#textField(objectName="basket", property="Lagerort", label="Lagerort: ")#<br>
-    #textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
+		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
 
     <div>#submitTag()#</div>
+    <cfelse>
+
+ 	#select(includeBlank="-Kunde ausw&auml;hlen-",
+        label="Kundenname: ", objectName="customer", property="Kundencode",
+        options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
+		onchange="location='./index.cfm?controller=akten&action=akte_new&key=customer:' + this.options[this.selectedIndex].value;")#
+
 </cfif>
 #endFormTag()#
 
