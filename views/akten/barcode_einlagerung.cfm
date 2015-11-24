@@ -53,7 +53,7 @@ function checkBarcodeField(text)
     <p class="success">#flash("success")#</p>
 </cfif>
 
-#startFormTag(action="create_file", name="file")#
+#startFormTag(action="create_file_new", name="file")#
 
 <cfif StructKeyExists(params,"key")>
  	#select(
