@@ -46,6 +46,11 @@ function checkBarcodeField(text)
 		$('#file-Karton').val(text.substring(1,text.length));
 	}
 }
+
+function mySubmit()
+{
+	document.file.submit();
+}
 </script>
 
 <h1>Neue Akte einlagern</h1>
@@ -55,7 +60,7 @@ function checkBarcodeField(text)
     <p class="success">#flash("success")#</p>
 </cfif>
 
-#startFormTag(action="create_file_new", name="file")#
+#startFormTag(action="create_file_new", name="file", onsubmit="return false;")#
 
 <cfif StructKeyExists(params,"key")>
  	#select(
@@ -75,6 +80,7 @@ function checkBarcodeField(text)
 		
 
     <div>#submitTag()#</div>
+    <input type="button" onclick="mysubmit" name="button1" value="Absenden!">
     <cfelse>
 
  	#select(includeBlank="-Kunde ausw&auml;hlen-",
