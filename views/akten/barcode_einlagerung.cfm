@@ -35,13 +35,13 @@ function checkBarcodeField(text)
 	if (text.substring(0,1) == "A")
 	{
 		alert("a gefunden");
-		$('#file-Aktennummer').value=text.substring(1,text.length);
+		$('#file-Aktennummer').val(text.substring(1,text.length));
 	}
 	else
 	if (text.substring(0,1) == "K")
 	{
 		alert("a gefunden");
-		$('#file-Karton').value=text.substring(1,text.length);
+		$('#file-Karton').val(text.substring(1,text.length));
 	}
 }
 </script>
