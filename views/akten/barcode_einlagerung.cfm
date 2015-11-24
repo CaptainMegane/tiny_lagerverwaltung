@@ -32,7 +32,7 @@ function checkKarton(select)
 
 function checkBarcodeField(text)
 {
-	alert("erkannter text: " + text + "erstes zeichen: " + text.substring(0,1));
+	//alert("erkannter text: " + text + "erstes zeichen: " + text.substring(0,1));
 
 	if (text.substring(0,1) == "A")
 	{
@@ -69,7 +69,7 @@ function checkBarcodeField(text)
 		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: ", onblur="javascript:checkBarcodeField(this.value)" )#<br>
 		<hr>
 		#textField(objectName="file", property="Karton", label="Kartonnummer: ", readonly="true" )#<br>
-		#textField(objectName="basket", property="Lagerort", label="Lagerort: (Wird nur gespeichert, wenn neuer Karton!)" )# <br>
+		#textField(objectName="basket", property="Lagerort", label="Lagerort (Wird nur gespeichert, wenn neuer Karton!): " )# <br>
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ", readonly="true")#<br>
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
