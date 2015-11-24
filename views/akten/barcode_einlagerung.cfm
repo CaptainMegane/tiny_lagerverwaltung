@@ -1,5 +1,5 @@
 
-<cfparam name="params.basket" default="">
+
 
 <cfoutput>
 
@@ -36,13 +36,13 @@ function checkBarcodeField(text)
 
 	if (text.substring(0,1) == "A")
 	{
-		alert("a gefunden");
+		//alert("a gefunden");
 		$('#file-Aktennummer').val(text.substring(1,text.length));
 	}
 	else
 	if (text.substring(0,1) == "K")
 	{
-		alert("a gefunden");
+		//alert("a gefunden");
 		$('#file-Karton').val(text.substring(1,text.length));
 	}
 }
@@ -68,9 +68,9 @@ function checkBarcodeField(text)
 		<hr>
 		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: ", onblur="javascript:checkBarcodeField(this.value)" )#<br>
 		<hr>
-		#textField(objectName="file", property="Karton", label="Kartonnummer: ", value=params.basket )#<br>
-		#textField(objectName="basket", property="Lagerort", label="Lagerort: " )#<br>
-		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ")#<br>
+		#textField(objectName="file", property="Karton", label="Kartonnummer: ", readonly )#<br>
+		#textField(objectName="basket", property="Lagerort", label="Lagerort: " )# (Wird nur gespeichert, wenn neuer Karton!)<br>
+		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ", readonly)#<br>
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
 
