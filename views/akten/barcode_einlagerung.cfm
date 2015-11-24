@@ -34,12 +34,14 @@ function checkBarcodeField(text)
 
 	if (text.substring(0,1) == "A")
 	{
-		$('#file-Aktennummer').value=text.substring(2,text.length);
+		alert("a gefunden");
+		$('#file-Aktennummer').value=text.substring(1,text.length);
 	}
 	else
 	if (text.substring(0,1) == "K")
 	{
-		$('#file-Aktennummer').value=text.substring(2,text.length);
+		alert("a gefunden");
+		$('#file-Karton').value=text.substring(1,text.length);
 	}
 }
 </script>
