@@ -49,7 +49,7 @@ function checkBarcodeField(text)
 
 function mySubmit()
 {
-	if(document.file.button1.value == "Absenden!")
+	if($('#file-Text').val)
 	{
 		document.file.submit();
 	}
@@ -82,8 +82,8 @@ function mySubmit()
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
 
-    <div>#submitTag()#</div>
-    <input type="button" onclick="mySubmit" name="button1" value="Absenden!">
+    <!---<div>#submitTag()#</div>--->
+    <input type="button" onclick="submit()" name="button1" value="Absenden!">
     <cfelse>
 
  	#select(includeBlank="-Kunde ausw&auml;hlen-",
