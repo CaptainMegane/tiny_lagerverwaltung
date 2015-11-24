@@ -56,7 +56,6 @@ function checkBarcodeField(text)
 
 <cfif flashKeyExists("success")>
     <p class="success"><b>#flash("success")#</b></p>
-    <br>
     <hr>
 </cfif>
 
@@ -75,9 +74,7 @@ function checkBarcodeField(text)
 		#textField(objectName="basket", property="Lagerort", label="Lagerort (Wird nur gespeichert, wenn neuer Karton!): " )# <br>
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ", readonly="true")#<br>
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
-		<br>
-		<br>
-    		<p><input type="button" onclick="submit()" name="button1" value="Absenden!"></p>
+		&nbsp;<input type="button" onclick="submit()" name="button1" value="Absenden!">
 		<hr>
 		<br> #lagerlistTable(baskets)#<br>
 		
