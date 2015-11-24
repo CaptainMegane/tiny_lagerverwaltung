@@ -82,7 +82,7 @@ function mySubmit()
 		#textArea(objectName="file", property="Text", label="Aktenbeschreibung: ")#
 		
 
-    <!---<div>#submitTag()#</div>--->
+ 
     <input type="button" onclick="submit()" name="button1" value="Absenden!">
     <cfelse>
 
