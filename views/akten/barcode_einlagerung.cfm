@@ -30,7 +30,7 @@ function checkKarton(select)
 
 function checkBarcodeField(text)
 {
-	alert("erkannter text: " + text + "erstes zeichen: " + text.substring(0,0));
+	alert("erkannter text: " + text + "erstes zeichen: " + text.substring(0,1));
 
 	if (text.substring(0,0) == "A")
 	{
