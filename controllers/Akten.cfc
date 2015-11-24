@@ -68,6 +68,7 @@
 	
 	<cffunction name="barcode_einlagerung">
         <cfinclude template="../views/akten/navigation.cfm">
+		<cfset barcode_field = model("barcode_a").new()>
 		<cfset customer=model("customer").new()>
 		<cfset customers=model("customer").findAll()>
 		<cfset file = model("basket").new()>
