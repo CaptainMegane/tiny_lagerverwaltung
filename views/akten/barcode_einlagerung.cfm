@@ -48,7 +48,7 @@ function checkKarton(select)
 		<hr>
 			  	 <br> #lagerlistTable(baskets)#<br>
 		<hr>
-		#textField(objectName="barcode_as", property="Code", label="Barcode-Eingabe: " )#<br>
+		#textField(objectName="barcode_field", property="Code", label="Barcode-Eingabe: " )#<br>
 		<hr>
 		#textField(objectName="basket", property="Karton", label="Kartonnummer: " )#<br>
 		#textField(objectName="file", property="Aktennummer", label="Aktennummer: ")#<br>
