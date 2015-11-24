@@ -16,7 +16,7 @@
 
 $(document).ready( function () {
     $('#table').DataTable();
-    $('#barcode_field-Code');
+    $('#barcode_field-Code').val("");
 } );
 
 function checkKarton(select)
