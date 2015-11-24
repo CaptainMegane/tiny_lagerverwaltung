@@ -157,7 +157,7 @@
  		basket=model("basket").findOneByKartonnummer(key=params.file.Karton,select="Kundencode,KARTONNUMMER,LAGERORT");
 		if( !isDefined("basket.Kartonnummer"))
 		{
-			basket.Kartonnummer=params.file.Karton;	
+			params.basket.Kartonnummer=params.file.Karton;	
 			params.basket.Kundencode=params.customer.Kundencode;
 			basket = model("basket").create(params.basket);
 		}
