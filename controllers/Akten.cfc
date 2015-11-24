@@ -103,7 +103,8 @@
 			</cfscript>
 			<cfif StructKeyExists(params,"basket")>
 				<cfset basket=model("basket").findOneByKartonnummer(key=params.basket,select="KARTONNUMMER,LAGERORT")>
-						</cfif>
+				<cfset file.Karton=basket.Kartonnummer>
+			</cfif>
 			<cfset file.Eindatum="#DateFormat(now())# #TimeFormat(now())#">
 
 		</cfif>
