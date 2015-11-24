@@ -103,7 +103,7 @@
 			</cfscript>
 			<cfif StructKeyExists(params,"basket")>
 				<cfset basket=model("basket").findOneByKartonnummer(key=params.basket,select="KARTONNUMMER,LAGERORT")>
-				<cfif isDefined(basket)>
+				<cfif isDefined("basket")>
 					<cfset file.Karton=basket.Kartonnummer>
 				</cfif>
 			</cfif>
