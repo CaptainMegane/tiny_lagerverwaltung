@@ -62,7 +62,7 @@ function checkKarton(select)
  	#select(includeBlank="-Kunde ausw&auml;hlen-",
         label="Kundenname: ", objectName="customer", property="Kundencode",
         options=customers, 	textField="K_Kundenname", valueField="K_Kundencode" ,
-		onchange="location='./index.cfm?controller=akten&action=akte_new&key=customer:' + this.options[this.selectedIndex].value;")#
+		onchange="location='./index.cfm?controller=akten&action=barcode_einlagerung&key=customer:' + this.options[this.selectedIndex].value;")#
 
 </cfif>
 #endFormTag()#
