@@ -73,7 +73,8 @@
 		<cfset customers=model("customer").findAll()>
 		<cfset file = model("basket").new()>
 
-
+	
+			
 		<cfif StructKeyExists(params,"key")>
 
 			<cfscript>
@@ -100,6 +101,10 @@
 
 
 			</cfscript>
+			<cfif StructKeyExists(params,"basket")>
+				basket=model("basket").findOneByKartonnummer(key=params.basket,select="KARTONNUMMER,LAGERORT");
+				//basket.Kartonnummer=params.basket;
+			</cfif>
 			<cfset file.Eindatum="#DateFormat(now())# #TimeFormat(now())#">
 
 		</cfif>
