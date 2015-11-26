@@ -23,7 +23,7 @@ body {
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 {
-  /* das stört!*/ margin-left: auto;
+  /* das stÃ¶rt!*/ margin-left: auto;
   margin-right: auto;
   width: 1400px;
   border-radius: 15px;
@@ -119,7 +119,7 @@ body {
 
 .container_12 .grid_6 {
   width:1200px;
-  height: 760px;
+  height: 780px;
   padding: 20px; 
 }
 
