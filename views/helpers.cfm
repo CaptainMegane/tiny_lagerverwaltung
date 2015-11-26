@@ -9,7 +9,7 @@
 		&nbsp; &nbsp; &nbsp;
 		#linkTo(text="Karton- & Aktenverwaltung", controller="Akten", action="einlagerung_new")#
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Akten einlagern", controller="Akten", action="akte_new")#
+		#linkTo(text="Akten einlagern", controller="Akten", action="barcode_einlagerung")#
 		&nbsp; &nbsp; &nbsp;
 		#linkTo(text="Barcodes drucken", controller="barcodes", action="generateKartoncodes")#
 	</h5>

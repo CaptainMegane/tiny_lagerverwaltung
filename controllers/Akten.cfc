@@ -40,7 +40,7 @@
 				var prefix=ListFirst(params.key,":");
 				var value=ListLast(params.key,":");
 			switch (prefix) {
-				/* Baset wurde zuerst ausgew�hlt */
+				/* Baset wurde zuerst ausgewählt */
 				case "basket":
 					baskets=model("basket").findOneByKartonnummer(key=value,select="Kundencode,customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files",returnAs='query');
 					baskets_select=model("basket").findAllByKundencode(key=value,select="KARTONNUMMER",group="Kartonnummer",returnAs='query');
@@ -48,7 +48,7 @@
 					basket = model("basket").new();
 					break;
 				case "customer":
-					/* customer wurde zuerst ausgew�hlt*/
+					/* customer wurde zuerst ausgewählt*/
 
 
 					customers= model("customer").findOneByK_Kundencode(key=value,returnAs='query');
@@ -65,6 +65,54 @@
 		</cfif>
 
 	</cffunction>
+	
+	<cffunction name="barcode_einlagerung">
+        <cfinclude template="../views/akten/navigation.cfm">
+		<cfset barcode_field = model("barcode_a").new()>
+		<cfset customer=model("customer").new()>
+		<cfset customers=model("customer").findAll()>
+		<cfset file = model("basket").new()>
+
+	
+			
+		<cfif StructKeyExists(params,"key")>
+
+			<cfscript>
+				var prefix=ListFirst(params.key,":");
+				var value=ListLast(params.key,":");
+			switch (prefix) {
+				/* Baset wurde zuerst ausgewählt */
+				case "basket":
+					baskets=model("basket").findOneByKartonnummer(key=value,select="Kundencode,customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files",returnAs='query');
+					baskets_select=model("basket").findAllByKundencode(key=value,select="KARTONNUMMER",group="Kartonnummer",returnAs='query');
+					customers=model("customer").findAllByK_Kundencode(baskets.Kundencode);
+					basket = model("basket").new();
+					break;
+				case "customer":
+					/* customer wurde zuerst ausgewählt*/
+
+
+					customers= model("customer").findOneByK_Kundencode(key=value,returnAs='query');
+					baskets= model("basket").findAllByKundencode(key=customers.K_Kundencode,select="customers.K_Kundenname as Kunde,KARTONNUMMER,LAGERORT,files.Aktennummer,files.text",include="customers,files");
+					baskets_select=model("basket").findAllByKundencode(key=customers.K_Kundencode,select="KARTONNUMMER",group="Kartonnummer",returnAs='query');
+					basket=	 model("basket").new();
+					break;
+			}
+
+
+			</cfscript>
+			<cfif StructKeyExists(params,"basket")>
+				<cfset basket=model("basket").findOneByKartonnummer(key=params.basket,select="KARTONNUMMER,LAGERORT")>
+				<cfif isDefined("basket.Kartonnummer")>
+					<cfset file.Karton=basket.Kartonnummer>
+				</cfif>
+			</cfif>
+			<cfset file.Eindatum="#DateFormat(now())# #TimeFormat(now())#">
+
+		</cfif>
+
+	</cffunction>
+
 
 	<cffunction name="create_basket">
         <cfinclude template="../views/akten/navigation.cfm">
@@ -76,7 +124,7 @@
 	    )>
 
 	</cffunction>
-
+	
 	<cffunction name="create_file">
 
 
@@ -99,6 +147,29 @@
 	        action="akte_new",
 	        key="customer:#params.customer.Kundencode#",
 	        success="Akte #file.Aktennummer# in Karton #file.Karton# f&uuml;r Kunde #params.customer.Kundencode# erfolgreich eingelagert."
+	    )>
+
+	</cffunction>
+
+	<cffunction name="create_file_new">
+
+		<cfscript>
+ 		basket=model("basket").findOneByKartonnummer(key=params.file.Karton,select="Kundencode,KARTONNUMMER,LAGERORT");
+		if( !isDefined("basket.Kartonnummer"))
+		{
+			params.basket.Kartonnummer=params.file.Karton;	
+			params.basket.Kundencode=params.customer.Kundencode;
+			basket = model("basket").create(params.basket);
+		}
+		</cfscript>
+
+        <cfinclude template="../views/akten/navigation.cfm">
+	    <cfset file = model("file").create(params.file)>
+	    <cfset redirectTo(
+	        action="barcode_einlagerung",
+	        key="customer:#params.customer.Kundencode#",
+	        params="basket=#file.Karton#",
+	        success="Akte #file.Aktennummer# in Karton #file.Karton# f&uuml;r Kunde #params.customer.Kundencode# erfolgreich eingelagert. Karton steht auf #basket.lagerort# "
 	    )>
 
 	</cffunction>
