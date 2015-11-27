@@ -34,7 +34,7 @@
 					#includeContent("leftNav")#
 </cfoutput>
 				</div>
-				<div id="content" class="grid_6">
+				<div id="content" class="grid_6" style="overflow:auto">
 					<cfoutput>
 					#includeContent()#
 					</cfoutput>
