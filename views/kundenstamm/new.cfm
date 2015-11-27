@@ -20,9 +20,9 @@
 
 	#textField(objectName="customer", property="K_Kundenvertreter", label="Kontaktperson: ")#
 
-    #textField(objectName="customer", property="K_Straﬂe", label="Straﬂe, Hausnummer: ")#
+    #textField(objectName="customer", property="K_Strasse", label="Stra√üe, Hausnummer: ")#
 
-	#textField(objectName="customer", property="K_PLZ", label="PLZ: ")#
+	#textField(objectName="customer", property="K_Postleitzahl", label="PLZ: ")#
 
     #textField(objectName="customer", property="K_Ort", label="Ort: ")#
 
