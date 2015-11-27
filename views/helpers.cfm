@@ -5,13 +5,13 @@
 	<cfoutput>
 	<h5>
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Kundenverwaltung", controller="Kundenstamm", action="showAll")#
+		#linkTo(text="Kundenverwaltung", controller="Kundenstamm", action="showAll", class="level_1")#
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Karton- & Aktenverwaltung", controller="Akten", action="einlagerung_new")#
+		#linkTo(text="Karton- & Aktenverwaltung", controller="Akten", action="einlagerung_new", class="level_1")#
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Akten einlagern", controller="Akten", action="barcode_einlagerung")#
+		#linkTo(text="Akten einlagern", controller="Akten", action="barcode_einlagerung", class="level_1" )#
 		&nbsp; &nbsp; &nbsp;
-		#linkTo(text="Barcodes drucken", controller="barcodes", action="generateKartoncodes")#
+		#linkTo(text="Barcodes drucken", controller="barcodes", action="generateKartoncodes", class="level_1")#
 	</h5>
 
 	</cfoutput>
