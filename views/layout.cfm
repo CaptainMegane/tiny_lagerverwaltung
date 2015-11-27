@@ -22,7 +22,7 @@
 
 		<img src="http://www.lagerplace24.de/s/img/emotionheader.jpg?1439064682.920px.199px" id="emotion-header-img" alt=""> --->
 	</div>
-	<div style="background:#B72C3C">
+	<div style="background:#B72C3C; height:20px">
 
 		<cfoutput>#includeNavigation()#</cfoutput>
 	</div>
